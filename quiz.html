@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluasi / Quiz</title>
+    <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+            #PopularPosts1,
+            #footer,
+            .page header,
+            #comments,
+            .post-share-buttons,
+            h3.post-title,
+            .bg-photo-container,
+            .bg-photo-overlay,
+            .centered-top-container,
+            .collapsed-header .centered-top-placeholder {
+            	display: none;
+            }
+
+
+
+            .post-body {
+            	color: #000;
+              margin: 0;
+              font-family: "Poppins", sans-serif;
+            }
+
+            .post-body img { height: unset; }
+
+            .post-body h3 { color: #000; }
+
+            footer h3 { color: #fff; }
+
+            .Blog .blog-posts .post-outer-container .post-outer {
+            	padding-bottom: 0;
+            }
+
+            .Blog .blog-posts .post-outer-container,
+            .centered-bottom {
+            	padding: 0;
+            }
+
+            .page_body .widget {
+            	margin-bottom: 0;
+            }
+
+            .page_body .centered {
+            	padding: 0;
+              max-width: unset;
+            }
+
+            @media screen and (max-width: 800px) {
+              div.widget.Blog .blog-posts .post-outer-container {
+              	padding: 0;
+              }
+            }
+
+            nav a:hover {
+            	color: #000;
+            }
+
+            a:visited {
+            	color: #000;
+            }
+
+            .buttons a:visited,
+            footer a:visited {
+            	color: #fff;
+            }
+
+            .post-body footer h3 {color: #fff;}
+
+
+
+            /* Custom Styles */
+
+            * {
+            box-sizing: border-box;
+          }
+
+          html {
+            scroll-behavior: smooth;
+          }
+
+          body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f5f4f4;
+          }
+
+          p {
+            line-height: 180%;
+            font-size: 16px;
+          }
+
+          a {
+            text-decoration: none;
+            color: #000;
+          }
+          .dropdown {
+            position: relative;
+          }
+
+         .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        padding: 10px 0;
+        min-width: 160px;
+        z-index: 9999; /* Penting: taruh di atas semua */
+      }
+
+          .dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            color: #000;
+          }
+
+          .dropdown-content a:hover {
+            background: #f5f5f5;
+          }
+
+          .dropdown:hover .dropdown-content,
+          .dropdown:focus-within .dropdown-content,
+          .dropdown.open .dropdown-content {
+            display: block;
+          }
+
+          nav {
+            position: fixed;
+            top: 30px;
+            background: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.9) 0%,
+              rgba(255, 254, 254, 0.4) 100%
+            );
+            backdrop-filter: blur(10px);
+            width: 1100px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 32px;
+            border-radius: 24px;
+            box-shadow: 0 4px 50px -8px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            justify-content: flex-start; /* biar item mulai dari kiri */
+            gap: 60px; /* jarak antara logo dan menu */
+          }
+
+      nav .logo {
+        font-weight: bold;
+        font-size: 18px;
+        color: #8300b6;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      nav .logo .logo-mark { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #fff; border: 2px solid rgba(0,0,0,0.08); display: inline-flex; align-items: center; justify-content: center; }
+      nav .logo .logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      nav .logo .logo-text { line-height: 1; }
+
+          nav .nav-items {
+            gap: 28px; /* kecilin jarak antar menu */
+            flex-wrap: nowrap; /* cegah turun ke bawah */
+            overflow: visible; /* kalau ga muat, bisa scroll horizontal */
+            scrollbar-width: none; /* sembunyikan scrollbar */
+             flex: 1;
+            display: flex;
+            justify-content: flex-end;
+          }
+          nav .nav-items::-webkit-scrollbar {
+            display: none; /* sembunyikan scrollbar di browser Webkit */
+          }
+
+          .custom-container {
+            max-width: 900px;
+            margin-inline: auto;
+          }
+
+          nav .nav-items { overflow-y: visible; position: relative; }
+
+          /* Header */
+
+          header.custom-header { display:none; }
+
+          h1 {
+            font-size: 50px;
+            line-height: 130%;
+            margin: 0;
+            background: linear-gradient(90deg, #230127 0%, #9e08fb 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+
+          .buttons {
+            display: flex;
+            gap: 24px;
+          }
+
+          .download-btn {
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            width: 210px;
+          }
+
+          .download-btn .btn-icon img { height: 36px; display: flex; }
+          .download-btn .btn-text div:first-child { text-transform: uppercase; }
+          .download-btn .btn-text div:last-child { font-weight: bold; }
+
+          /* Featured Section */
+          section { padding: 50px 32px; }
+          section h2 { color: #8300b6; text-align: center; margin: 0 0 16px 0; }
+
+          /* Mobile adjustments and other sections kept identical to index */
+          /* ... full style from index retained up to the end ... */
+
+          body.js-loaded .page { display: none; }
+          body.js-loaded .page.active { display: block; }
+          
+          section { margin-top: 30px; }
+
+          /* Hidden Items  */
+          nav .menu-icon,
+          .mobile-nav-menu {
+            display: none;
+          }
+
+          @media (max-width: 600px) {
+            nav .nav-items { display: none; }
+            body { background: #fff; }
+            nav { width: calc(100% - 30px); }
+            nav .menu-icon { display: block; cursor: pointer; }
+            nav .menu-icon img { height: 30px; display: flex; }
+          }\r\n
+          /* Guide styles */
+          /* Hero gradient band matching index */
+               .guide-hero { padding: 40px 16px 40px; background: transparent; }
+          .guide-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.6); border-radius: 16px; padding: 24px; box-shadow: 0 10px 40px -10px rgba(0,0,0,.15); }
+          .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+          .step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+          .step .num { background: #8300b6; color: #fff; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; font-size: 14px; font-weight: 700; margin-top: 4px; }
+          .icons-list { list-style: none; padding: 12px 0 0; margin: 8px 0 0; display: grid; gap: 12px; }
+          .icons-list li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
+          .icon-circle { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+          .icon-circle.home { background: linear-gradient(135deg, #63a4ff, #83eaf1); }
+          .icon-circle.next { background: linear-gradient(135deg, #ff9f43, #ffb56b); }
+          .icon-circle.prev { background: linear-gradient(135deg, #ff6b6b, #ff8c8c); }
+          \r\n    .icon-circle svg { width: 20px; height: 20px; display: block; }\r\n    .guide-card h2 { margin-top: 0; }
+
+          /* Fixed gradient behind navbar (reliable across browsers) */
+          .top-gradient-bg {
+  position: relative; /* ubah dari fixed jadi relative */
+  width: 100%;
+  height: 140px; /* tinggi dipendekkan */
+  background: linear-gradient(90deg, #c2cefe 0%, #f7a3fe 100%);
+  z-index: 1;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+          /* Header top-left circular logo */
+          .header-logo { position: absolute; top: 12px; left: 14px; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background:#fff; border:2px solid rgba(0,0,0,0.08); display:grid; place-items:center; z-index:2; }
+          .header-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+          /* Hide logo image inside navbar; header holds the logo */
+          nav .logo .logo-mark { display: none; }
+
+
+          /* Quiz styles */
+      .quiz-hero{ padding:30px 16px 40px; }
+      .qr-wrap{ display:grid; grid-template-columns: 1fr 520px 1.3fr; align-items:center; gap:24px; }
+      .left-illus{ justify-self:end; }
+      .speech{ background:#ffd54f; border:3px solid #111; padding:12px 14px; border-radius:16px; font-weight:800; max-width:200px; box-shadow: 6px 6px 0 #ff9f43; }
+      .qr-card{ background:#fff; border-radius:24px; padding:18px; box-shadow:0 16px 40px -16px rgba(0,0,0,.35); border:2px solid #f3a1c0; }
+      .scan-title{ text-align:center; font-weight:800; color:#d81b60; letter-spacing:2px; background:#ffd1e1; padding:10px 0; border-radius:14px; margin-bottom:12px; }
+      .qr-frame{ border:12px solid #f48fb1; border-radius:24px; padding:16px; background:#fff; }
+      .qr-img{ width:100%; aspect-ratio:1/1; background:#e9e9e9; display:block; border:10px solid #111; }
+      .right-illus{ align-self:center; }
+      .note-top{ margin-bottom:10px; font-weight:600; }\n      .right-illus .speech{ max-width: 280px; }\n</style>
+  </head>
+  <body>
+    
+    <div class="top-gradient-bg" aria-hidden="true"><a class="header-logo" href="home_29.html" aria-label="Home"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" /></a></div>
+<nav>
+  <a class="logo" href="home_29.html"><span class="logo-mark"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" /></span><span class="logo-text">Perawatan Tangan</span></a>
+  <div class="nav-items">
+    <a class="nav-link" href="home_29.html">Home</a>
+    <a class="nav-link" href="tujuan.html">ATP</a>
+    <div class="dropdown">
+      <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
+      <div class="dropdown-content">
+        <a href="materi.html#kajian-teori">Kajian Teori</a>
+        <a href="materi.html#lembar-diagnosa">Lembar Diagnosa</a>
+        <a href="materi.html#perlengkapan">Perlengkapan</a>
+        <a href="materi.html#prosedur-kerja">Prosedur Kerja</a>
+      </div>
+    </div>
+    <a class="nav-link" href="rangkuman.html">Rangkuman</a>
+    <a class="nav-link" href="quiz.html">Evaluasi</a>
+    <a class="nav-link" href="glosarium.html">Glosarium</a>
+    <a class="nav-link" href="profil.html">Profil Pengembang</a>
+  </div>
+
+  <div class="menu-icon">
+    <img alt="menu" src="#" />
+  </div>
+</nav>
+
+    <div class="custom-container">
+      <section id="quiz" class="page active">
+  <div class="quiz-hero">
+    <div class="custom-container">
+     
+      <div class="qr-wrap">
+        <div class="left-illus">
+          <div class="speech">Time to Quizz!!</div>
+        </div>
+        <div class="qr-card">
+          <div class="scan-title">SCAN ME</div>
+          <div class="qr-frame">
+            <img class="qr-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYKA3hlvm-s1uJj_De3vZ30OuuexlGfUVnUueA6SzfNsyB4VmDeqaUAwiGpwjpN2jqsfD31Hp-9Q5QqHopXL3FyrtM-iqO9M259Q1LFBGvqFeJoQ8qF6oPDWdF4SJLV_cb38-tobbJvIOE79fb9_bE0g6F0su-h0zYC1hsU05XRVADMrpD4CjlLu2vcrAn/s320/image183.png" alt="QR Code" />
+          </div>
+        </div>
+        <div class="right-illus">
+          <div class="speech" style="background:#e1f5fe; border-color:#111; color:#000;">Scan via smartphone</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+
+    <script>
+      const featuresList = [
+        { icon: "#", title: "Intuitive Task Creation", description: "Easily create and manage tasks with a simple and user-friendly interface." },
+        { icon: "#", title: "Smart Reminders", description: "Set reminders to ensure you never miss an important deadline." },
+        { icon: "#", title: "Collaboration Tools", description: "Collaborate with team members, assign tasks, and track progress together." },
+        { icon: "#", title: "Progress Tracking", description: "Monitor your progress, track completed tasks, and stay motivated." },
+        { icon: "#", title: "Deadline Management", description: "Set due dates and track deadlines to stay on top of your commitments." },
+        { icon: "#", title: "File Attachments", description: "Attach files to tasks for seamless collaboration and easy access." },
+      ];
+
+      const testimonialsList = [
+        { review: "Since I started using the app, my productivity has skyrocketed...", image: "#", name: "John Smith", designation: "Tech Lead, Amazon" },
+        { review: "This app has completely changed the way I manage my tasks...", image: "#", name: "Sarah Johnson", designation: "Product Manager, Google" },
+        { review: "I've tried several task management apps, but this one takes the cake...", image: "#", name: "Emily Davis", designation: "Project Manager, Microsoft" },
+      ];
+
+      const sections = document.querySelectorAll('.page');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function showSection(id) {
+        sections.forEach(sec => sec.classList.remove('active'));
+        const target = document.querySelector(id);
+        if (target) target.classList.add('active');
+        window.scrollTo({ top: 0 });
+      }
+
+      // Default to section on first load
+      document.body.classList.add('js-loaded');
+      if (location.hash && document.querySelector(location.hash)) {
+        showSection(location.hash);
+      } else {
+        showSection('#quiz');
+      }
+
+      // Components rendering with guards
+      const featuresContent = document.querySelector('#features .content');
+      if (featuresContent) {
+        const displayFeatures = () => {
+          featuresList.forEach((f) => {
+            const card = document.createElement('div');
+            card.classList.add('feature-card');
+            card.innerHTML = `<div class=\"icon\"><img src=\"${f.icon}\" alt=\"\" /></div><h3>${f.title}</h3><p>${f.description}</p>`;
+            featuresContent.appendChild(card);
+          });
+        };
+        displayFeatures();
+      }
+
+      const testimonialCard = document.querySelector('#testimonials .testimonial-card');
+      const prevBtn = document.querySelector('#testimonials .prev-btn');
+      const nextBtn = document.querySelector('#testimonials .next-btn');
+      let currentTestimonialIndex = 0;
+      const displayTestimonial = () => {
+        if (!testimonialCard) return;
+        const t = testimonialsList[currentTestimonialIndex];
+        testimonialCard.innerHTML = `<span class=\"quote-icon\"><img src=\"#\" alt=\"\" /></span>
+          <p class=\"review\">${t.review}</p>
+          <div class=\"reviewer-info\">
+            <div class=\"image\"><img src=\"${t.image}\" alt=\"\" /></div>
+            <div class=\"details\"><div class=\"name\">${t.name}</div><div class=\"designation\">${t.designation}</div></div>
+          </div>`;
+        testimonialCard.classList.add('active');
+      };
+      if (testimonialCard) {
+        displayTestimonial();
+        if (nextBtn) nextBtn.addEventListener('click', () => { currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialsList.length; displayTestimonial(); });
+        if (prevBtn) prevBtn.addEventListener('click', () => { currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialsList.length) % testimonialsList.length; displayTestimonial(); });
+      }
+
+      const pricingContent = document.querySelector('#pricing .content');
+      if (pricingContent) {
+        const plans = [
+          { name: 'Basic', features: ['50 Tasks','Deadline Tracking','Priority Settings','Basic Reporting','Email Notifications','24/7 Customer Support'], price: 'Free', link: '#' },
+          { name: 'Pro', features: ['All from <strong>Basic</strong> plan','Advanced Tasks','Subtasks','File Attachments','Gantt Chart View','Collaborations'], price: '$29.99', link: '#' },
+          { name: 'Enterprise', features: ['All from <strong>Pro</strong> plan','Custom Branding','API Access','Data Export','Advanced Security','Custom Integrations'], price: 'Contact for pricing', link: '#' },
+        ];
+        const displayPricing = () => {
+          plans.forEach((p) => {
+            const featuresHTML = p.features.map(f => `<li><span class='icon'><img src='#'/></span>${f}</li>`).join('');
+            const html = `<h4 class=\"plan-name\">${p.name}</h4><ul class=\"plan-features\">${featuresHTML}</ul><div class=\"plan-price\">${p.price}</div><a href=\"${p.link}\" class=\"btn\">Choose</a>`;
+            const plan = document.createElement('div');
+            plan.classList.add('plan');
+            plan.innerHTML = html;
+            pricingContent.appendChild(plan);
+          });
+        };
+        displayPricing();
+      }
+
+      const menuIcon = document.querySelector('.menu-icon');
+      const mobileNavMenu = document.querySelector('.mobile-nav-menu');
+      if (menuIcon && mobileNavMenu) {
+        menuIcon.addEventListener('click', () => { mobileNavMenu.classList.toggle('active'); });
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href') || '';
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            showSection(href);
+          }
+          if (mobileNavMenu) mobileNavMenu.classList.remove('active');
+        });
+      });
+
+      const latestPostsList = document.querySelector('#blog .latest-posts-list');
+      const generateLatestPosts = (posts) => {
+        if (!latestPostsList) return;
+        posts.forEach(post => {
+          const title = post.title.$t;
+          const defaultThumbnail = '#';
+          const thumbnailSrc = post.media$thumbnail ? post.media$thumbnail.url.replace('/s72', '/s300') : defaultThumbnail;
+          const summary = post.summary.$t;
+          const link = post.link[post.link.length - 1].href;
+          const html = `<div class=\"thumbnail\"><a href=\"${link}\"><img src=\"${thumbnailSrc}\" alt=\"\" /></a></div>
+            <a href=\"${link}\"><h3 class=\"title\">${title}</h3></a>
+            <div class=\"summary\">${summary}</div>
+            <a href=\"${link}\" class=\"read-more-btn\">Read more</a>`;
+          const postDiv = document.createElement('div');
+          postDiv.classList.add('post');
+          postDiv.innerHTML = html;
+          latestPostsList.appendChild(postDiv);
+        });
+      };
+      const handleLatestPosts = (posts) => { if (posts?.feed?.entry) generateLatestPosts(posts.feed.entry); };
+      document.querySelectorAll('.nav-link').forEach(a => { const href = a.getAttribute('href') || ''; if (href.endsWith('quiz.html')) a.classList.add('active'); });\r\nif (!document.querySelector('.page.active') && document.querySelector('#quiz')) {
+          document.querySelector('#quiz')?.classList.add('active');
+        }\r\nwindow.handleLatestPosts = handleLatestPosts;
+    </script>
+    <script src="/feeds/posts/summary?alt=json-in-script&callback=handleLatestPosts&max-results=2"></script>
+    <script>document.querySelectorAll('.nav-link').forEach(a=>{const h=a.getAttribute('href')||'';if(h.endsWith('quiz.html')) a.classList.add('active');});</script>
+<script>(function dropdownToggleInit(){document.addEventListener("click",function(e){var t=e.target;if(t.closest(".dropdown > a")){var link=t.closest("a");var dd=link.parentElement; if(!dd.classList.contains("open")){e.preventDefault();dd.classList.add("open");} } else {document.querySelectorAll(".dropdown.open").forEach(function(d){ if(!d.contains(t)) d.classList.remove("open"); });}}); return true;})();</script></body>
+</html>
