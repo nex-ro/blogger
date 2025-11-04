@@ -89,7 +89,6 @@
           body {
             margin: 0;
             font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #c990ff 0%, #f7a3fe 100%);
             background-attachment: fixed;
           }
 
@@ -241,14 +240,13 @@
 
           @media (max-width: 600px) {
             nav .nav-items { display: none; }
-            body { background: linear-gradient(135deg, #c990ff 0%, #f7a3fe 100%); }
             nav { width: calc(100% - 30px); }
             nav .menu-icon { display: block; cursor: pointer; }
             nav .menu-icon img { height: 30px; display: flex; }
           }\r\n
           /* Guide styles */
           /* Hero gradient band matching index */
-               .guide-hero { padding: 140px 16px 60px; background: transparent; }
+               .guide-hero { padding: 0px 16px 60px; background: transparent; }
           .guide-card {
             background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
             border: 2px solid #d3b6ff;
@@ -309,7 +307,7 @@
         border-radius: 16px;
       }
       .num-large{ font-weight:800; font-size:44px; color:#111; background:#fff; border:3px solid #111; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; }
-      .note-box{ border:2px solid #ff9f43; background:#fff9f1; border-radius:8px; padding:12px 14px; }
+      .note-box{ border:2px solid #ff9f43; background:#fff9f1; border-radius:8px; padding:2px;min-height: 50px;}
       /* Uniform image sizing + alignment in all grids */
       .img-ph{ width:160px; height:110px; background:#e9e9e9; border-radius:8px; display:block; margin:0 auto; object-fit:cover; }
       /* Enforce uniform size even if class is missing */
@@ -492,6 +490,1009 @@ section {
 }
 /* Offset anchors for fixed navbar */
 .anchor-target { scroll-margin-top: 140px; }
+.audio-player-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+}
+
+.music-toggle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+}
+
+.music-toggle-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.music-icon {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn.playing .music-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .music-toggle-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+.badge-hand-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  font-size: 2em;
+  height: 40px;
+  padding: 0 10px;
+  background: #FFD700;
+  color: #000;
+  font-weight: 800;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+.grid-2.hand-shapes {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 16px 20px;
+}
+
+.grid-2.hand-shapes > div { 
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+}
+
+.grid-2.hand-shapes > div .badge-hand-shape {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.grid-2.hand-shapes > div .note-box {
+  flex: 1;
+  margin: 0 !important;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+/* Responsive untuk hand-shapes */
+@media (max-width: 900px) {
+  .grid-2.hand-shapes {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .badge-hand-shape {
+    min-width: 28px;
+    height: 28px;
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  
+  .grid-2.hand-shapes > div .note-box {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .grid-2.hand-shapes {
+    gap: 12px;
+  }
+}
+.audio-player-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+}
+
+.music-toggle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+}
+
+.music-toggle-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.music-icon {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn.playing .music-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .music-toggle-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+/* Update styling untuk side-num - angka tetap di kiri atas gambar */
+.side-num > div { 
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  grid-template-rows: auto auto auto; 
+  column-gap: 12px; 
+  row-gap: 8px; 
+  align-items: start; 
+}
+
+.side-num > div .num-large { 
+  grid-column: 1; 
+  grid-row: 1; 
+  align-self: start; 
+  justify-self: start;
+  margin-top: 0;
+}
+
+.side-num > div img { 
+  grid-column: 2; 
+  grid-row: 1; 
+  justify-self: center; 
+  align-self: start;
+  width: 160px; 
+  height: 110px; 
+  object-fit: cover;
+}
+
+.side-num > div > div:nth-of-type(2) { 
+  grid-column: 1 / -1; 
+  grid-row: 2; 
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 16px;
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+.side-num > div .caption { 
+  grid-column: 1 / -1; 
+  grid-row: 3; 
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .side-num > div { 
+    grid-template-columns: 56px 1fr; 
+  }
+}
+
+@media (max-width: 600px) {
+  .side-num > div { 
+    grid-template-columns: 52px 1fr; 
+    grid-template-rows: 96px auto auto; 
+  }
+  
+  .side-num > div img {
+    width: 140px;
+    height: 96px;
+  }
+  
+  .side-num > div > div:nth-of-type(2) {
+    font-size: 14px;
+  }
+}
+/* Update styling untuk side-num - judul di atas gambar */
+.side-num > div { 
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  grid-template-rows: auto auto auto; 
+  column-gap: 12px; 
+  row-gap: 8px; 
+  align-items: start; 
+}
+
+.side-num > div .num-large { 
+  grid-column: 1; 
+  grid-row: 1 / 3; /* Angka mengambil 2 baris (judul + gambar) */
+  align-self: start; 
+  justify-self: start;
+  margin-top: 0;
+}
+
+.side-num > div > div:nth-of-type(2) { 
+  grid-column: 2; 
+  grid-row: 1; 
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 16px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.side-num > div img { 
+  grid-column: 2; 
+  grid-row: 2; 
+  justify-self: center; 
+  align-self: start;
+  width: 160px; 
+  height: 110px; 
+  object-fit: cover;
+}
+
+.side-num > div .caption { 
+  grid-column: 1 / -1; 
+  grid-row: 3; 
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .side-num > div { 
+    grid-template-columns: 56px 1fr; 
+  }
+}
+
+@media (max-width: 600px) {
+  .side-num > div { 
+    grid-template-columns: 52px 1fr; 
+  }
+  
+  .side-num > div img {
+    width: 140px;
+    height: 96px;
+  }
+  
+  .side-num > div > div:nth-of-type(2) {
+    font-size: 14px;
+  }
+}
+/* Update styling untuk side-num - caption sejajar tengah dengan konten */
+.side-num > div { 
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  grid-template-rows: auto auto auto; 
+  column-gap: 12px; 
+  row-gap: 8px; 
+  align-items: start; 
+}
+
+.side-num > div .num-large { 
+  grid-column: 1; 
+  grid-row: 1 / 3; /* Angka mengambil 2 baris (judul + gambar) */
+  align-self: start; 
+  justify-self: start;
+  margin-top: 0;
+}
+
+.side-num > div > div:nth-of-type(2) { 
+  grid-column: 2; 
+  grid-row: 1; 
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 16px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.side-num > div img { 
+  grid-column: 2; 
+  grid-row: 2; 
+  justify-self: center; 
+  align-self: start;
+  width: 160px; 
+  height: 110px; 
+  object-fit: cover;
+}
+
+.side-num > div .caption { 
+  grid-column: 2; /* Hanya kolom 2, tidak full width */
+  grid-row: 3; 
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .side-num > div { 
+    grid-template-columns: 56px 1fr; 
+  }
+}
+
+@media (max-width: 600px) {
+  .side-num > div { 
+    grid-template-columns: 52px 1fr; 
+  }
+  
+  .side-num > div img {
+    width: 140px;
+    height: 96px;
+  }
+  
+  .side-num > div > div:nth-of-type(2) {
+    font-size: 14px;
+  }
+}
+.alat-list > div { 
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  grid-template-rows: auto auto auto; 
+  column-gap: 12px; 
+  row-gap: 8px; 
+  align-items: start; 
+}
+
+.alat-list > div .badge-yellow { 
+  grid-column: 1; 
+  grid-row: 1 / 3; /* Badge mengambil 2 baris (judul + gambar) */
+  align-self: start; 
+  justify-self: start;
+  margin-top: 0;
+}
+
+.alat-list > div > div:nth-of-type(2) { 
+  grid-column: 2; 
+  grid-row: 1; 
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 16px;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.alat-list > div img { 
+  grid-column: 2; 
+  grid-row: 2; 
+  justify-self: center; 
+  align-self: start;
+  width: 160px; 
+  height: 110px; 
+  object-fit: cover;
+}
+
+.alat-list > div .caption { 
+  grid-column: 2; /* Hanya kolom 2, sejajar dengan judul dan gambar */
+  grid-row: 3; 
+  margin-top: 4px;
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive untuk alat-list */
+@media (max-width: 900px) {
+  .alat-list > div { 
+    grid-template-columns: 56px 1fr; 
+  }
+}
+
+@media (max-width: 600px) {
+  .alat-list > div { 
+    grid-template-columns: 52px 1fr; 
+  }
+  
+  .alat-list > div img {
+    width: 140px;
+    height: 96px;
+  }
+  
+  .alat-list > div > div:nth-of-type(2) {
+    font-size: 14px;
+  }
+}
+
+/* Update styling untuk side-num - judul di atas gambar */
+.side-num > div { 
+  display: grid; 
+  grid-template-columns: 60px 1fr; 
+  grid-template-rows: auto auto auto; 
+  column-gap: 6px; /* Kurangi jarak dari 12px ke 6px */
+  row-gap: 4px; /* Kurangi jarak dari 8px ke 4px */
+  align-items: start; 
+}
+
+.side-num > div .num-large { 
+  grid-column: 1; 
+  grid-row: 1 / 3; /* Angka mengambil 2 baris (judul + gambar) */
+  align-self: start; 
+  justify-self: start;
+  margin-top: 0;
+  margin-right: -4px; /* Geser angka lebih dekat ke kanan */
+}
+
+.grid-3.side-num,
+.grid-3.alat-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Wrapper untuk setiap item - untuk positioning badge di luar */
+.grid-3.side-num > div,
+.grid-3.alat-list > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 40px; /* Ruang untuk badge di luar */
+}
+
+/* Container konten dengan background putih */
+.grid-3.side-num > div::after,
+.grid-3.alat-list > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.grid-3.side-num > div:hover::after,
+.grid-3.alat-list > div:hover::after {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(131, 0, 182, 0.15);
+  border-color: #d3b6ff;
+}
+
+/* Badge angka - DI LUAR background putih */
+.grid-3.side-num > div .num-large,
+.grid-3.alat-list > div .badge-yellow {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  font-weight: 800;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2; /* Di atas background putih */
+  margin: 0;
+}
+
+/* Badge ungu untuk Kelainan Kuku */
+.grid-3.side-num > div .num-large {
+  color: #fff;
+  background: linear-gradient(135deg, #8300b6 0%, #a855f7 100%);
+  box-shadow: 0 4px 12px rgba(131, 0, 182, 0.3);
+}
+
+/* Badge kuning untuk Alat, Bahan, Lenan, Kosmetik */
+.grid-3.alat-list > div .badge-yellow {
+  color: #000;
+  background: linear-gradient(135deg, #ffe34d 0%, #ffd700 100%);
+  box-shadow: 0 4px 12px rgba(255, 227, 77, 0.35);
+  border: none;
+}
+
+/* Container untuk konten (nama, gambar, caption) */
+.grid-3.side-num > div > div:nth-of-type(2),
+.grid-3.side-num > div > img,
+.grid-3.side-num > div > .caption,
+.grid-3.alat-list > div > div:nth-of-type(2),
+.grid-3.alat-list > div > img,
+.grid-3.alat-list > div > .caption {
+  position: relative;
+  z-index: 1; /* Di atas background putih */
+}
+
+/* Nama item - TIDAK BOLD */
+.grid-3.side-num > div > div:nth-of-type(2),
+.grid-3.alat-list > div > div:nth-of-type(2) {
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 15px;
+  line-height: 1.4;
+  color: #2d1e6f;
+  padding: 16px 16px 8px 16px;
+  min-height: auto;
+  display: block;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Gambar */
+.grid-3.side-num > div img,
+.grid-3.alat-list > div img {
+  width: 100%;
+  max-width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f5f5f5;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.grid-3.side-num > div:hover img,
+.grid-3.alat-list > div:hover img {
+  border-color: #d3b6ff;
+  transform: scale(1.03);
+}
+
+/* Caption/Sumber */
+.grid-3.side-num > div .caption,
+.grid-3.alat-list > div .caption {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  line-height: 1.3;
+  padding: 8px 16px 16px 16px;
+  margin: 0;
+}
+
+/* Header untuk kategori perlengkapan */
+.card-elev h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d1e6f;
+  margin: 0px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ffe34d;
+  display: inline-block;
+  position: relative;
+}
+
+.card-elev h4:first-of-type {
+  margin-top: 8px;
+}
+
+.card-elev h4::before {
+  content: "●";
+  color: #8300b6;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Override conflicting old styles */
+.grid-3.side-num > div,
+.grid-3.alat-list > div {
+  display: flex !important;
+  grid-template-columns: unset !important;
+  grid-template-rows: unset !important;
+  column-gap: unset !important;
+  row-gap: unset !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 900px) {
+  .grid-3.side-num,
+  .grid-3.alat-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-3.side-num > div,
+  .grid-3.alat-list > div {
+    padding-left: 36px;
+  }
+  
+  .grid-3.side-num > div::after,
+  .grid-3.alat-list > div::after {
+    left: 28px;
+  }
+  
+  .grid-3.side-num > div .num-large,
+  .grid-3.alat-list > div .badge-yellow {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    top: 10px;
+  }
+  
+  .grid-3.side-num > div img,
+  .grid-3.alat-list > div img {
+    max-width: 160px;
+    height: 110px;
+  }
+  
+  .grid-3.side-num > div > div:nth-of-type(2),
+  .grid-3.alat-list > div > div:nth-of-type(2) {
+    font-size: 14px;
+    padding: 14px 14px 6px 14px;
+  }
+  
+  .grid-3.side-num > div .caption,
+  .grid-3.alat-list > div .caption {
+    padding: 6px 14px 14px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3.side-num,
+  .grid-3.alat-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .grid-3.side-num > div,
+  .grid-3.alat-list > div {
+    padding-left: 32px;
+  }
+  
+  .grid-3.side-num > div::after,
+  .grid-3.alat-list > div::after {
+    left: 24px;
+  }
+  
+  .grid-3.side-num > div .num-large,
+  .grid-3.alat-list > div .badge-yellow {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    border-radius: 10px;
+    top: 8px;
+  }
+  
+  .grid-3.side-num > div img,
+  .grid-3.alat-list > div img {
+    max-width: 140px;
+    height: 100px;
+  }
+  
+  .grid-3.side-num > div > div:nth-of-type(2),
+  .grid-3.alat-list > div > div:nth-of-type(2) {
+    font-size: 13px;
+    padding: 12px 12px 6px 12px;
+  }
+  
+  .grid-3.side-num > div .caption,
+  .grid-3.alat-list > div .caption {
+    font-size: 10px;
+    padding: 6px 12px 12px 12px;
+  }
+  
+  .card-elev h4 {
+    font-size: 18px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .grid-3.side-num > div,
+  .grid-3.alat-list > div {
+    padding-left: 28px;
+  }
+  
+  .grid-3.side-num > div::after,
+  .grid-3.alat-list > div::after {
+    left: 20px;
+  }
+  
+  .grid-3.side-num > div .num-large,
+  .grid-3.alat-list > div .badge-yellow {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+  
+  .grid-3.side-num > div img,
+  .grid-3.alat-list > div img {
+    max-width: 130px;
+    height: 90px;
+  }
+}
+
+/* Clean up */
+.grid-3 {
+  align-items: stretch;
+}
+/* ========================================
+   PERBAIKAN KHUSUS UNTUK BAGIAN ALAT
+   ======================================== */
+
+/* Grid khusus untuk alat-list */
+.grid-3.alat-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Wrapper untuk setiap item alat */
+.grid-3.alat-list > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 40px; /* Ruang untuk badge di luar */
+  min-height: 200px;
+}
+
+/* Background putih untuk konten alat */
+.grid-3.alat-list > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 32px;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.grid-3.alat-list > div:hover::after {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(131, 0, 182, 0.15);
+  border-color: #d3b6ff;
+}
+
+/* Badge angka - DI LUAR background putih */
+.grid-3.alat-list > div .num-large {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #8300b6 0%, #a855f7 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2; /* Di atas background putih */
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(131, 0, 182, 0.3);
+  border: none;
+}
+
+/* Konten di dalam card putih */
+.grid-3.alat-list > div > div:nth-of-type(2),
+.grid-3.alat-list > div > img,
+.grid-3.alat-list > div > .caption {
+  position: relative;
+  z-index: 1; /* Di atas background putih */
+}
+
+/* Nama item - TIDAK BOLD */
+.grid-3.alat-list > div > div:nth-of-type(2) {
+  text-align: center;
+  font-weight: 400; /* Tidak bold */
+  font-size: 15px;
+  line-height: 1.4;
+  color: #2d1e6f;
+  padding: 16px 16px 8px 16px;
+  min-height: auto;
+  display: block;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Gambar */
+.grid-3.alat-list > div img {
+  width: 100%;
+  max-width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f5f5f5;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.grid-3.alat-list > div:hover img {
+  border-color: #d3b6ff;
+  transform: scale(1.03);
+}
+
+/* Caption/Sumber */
+.grid-3.alat-list > div .caption {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  line-height: 1.3;
+  padding: 8px 16px 16px 16px;
+  margin: 0;
+}
+
+/* Override conflicting old styles untuk alat-list */
+.grid-3.alat-list > div {
+  display: flex !important;
+  grid-template-columns: unset !important;
+  grid-template-rows: unset !important;
+  column-gap: unset !important;
+  row-gap: unset !important;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN UNTUK ALAT
+   ======================================== */
+
+@media (max-width: 900px) {
+  .grid-3.alat-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-3.alat-list > div {
+    padding-left: 36px;
+  }
+  
+  .grid-3.alat-list > div::after {
+    left: 28px;
+  }
+  
+  .grid-3.alat-list > div .num-large {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    top: 10px;
+  }
+  
+  .grid-3.alat-list > div img {
+    max-width: 160px;
+    height: 110px;
+  }
+  
+  .grid-3.alat-list > div > div:nth-of-type(2) {
+    font-size: 14px;
+    padding: 14px 14px 6px 14px;
+  }
+  
+  .grid-3.alat-list > div .caption {
+    padding: 6px 14px 14px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3.alat-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .grid-3.alat-list > div {
+    padding-left: 32px;
+  }
+  
+  .grid-3.alat-list > div::after {
+    left: 24px;
+  }
+  
+  .grid-3.alat-list > div .num-large {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+    border-radius: 10px;
+    top: 8px;
+  }
+  
+  .grid-3.alat-list > div img {
+    max-width: 140px;
+    height: 100px;
+  }
+  
+  .grid-3.alat-list > div > div:nth-of-type(2) {
+    font-size: 13px;
+    padding: 12px 12px 6px 12px;
+  }
+  
+  .grid-3.alat-list > div .caption {
+    font-size: 10px;
+    padding: 6px 12px 12px 12px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .grid-3.alat-list > div {
+    padding-left: 28px;
+  }
+  
+  .grid-3.alat-list > div::after {
+    left: 20px;
+  }
+  
+  .grid-3.alat-list > div .num-large {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+  
+  .grid-3.alat-list > div img {
+    max-width: 130px;
+    height: 90px;
+  }
+}
 </style>
   </head>
   <body>
@@ -526,15 +1527,14 @@ section {
       <section id="materi" class="page active">
   <div class="guide-hero">
     <div class="custom-container">
-      <!-- A. Pengertian -->
       <div class="mac-window" style="margin-bottom:24px;">
         <div class="mac-bar"><span class="mac-dot red"></span><span class="mac-dot yellow"></span><span class="mac-dot green"></span></div>
         <div class="mac-body">
-<div id="kajian-teori" class="anchor-target"></div>
-          <h2 class="section-title"><strong>A. Pengertian Perawatan Tangan</strong></h2>
+      <div id="kajian-teori" class="anchor-target"></div>
+          <h2 class="section-title pill"><strong>A. Pengertian Perawatan Tangan</strong></h2>
           <p>Perawatan tangan sering disebut <em>manicure</em>. Istilah ini berasal dari bahasa Latin yaitu <em>Manus</em> (tangan) dan <em>Cure</em> (merawat). Dalam ilmu kecantikan, manicure adalah perawatan untuk memperoleh keindahan dan kesehatan tangan melalui tindakan teratur meliputi pembersihan, pengguratan, perawatan kutikula, dan pembentukan kuku (Rahmiati et al., 2025).</p>
-          <p>Menurut Dharmayanti et al. (2022), perawatan tangan adalah pengaplikasian kosmetika dan peralatan khusus perawatan tangan dan kuku dengan disertakan tindakan pembersihan, merapikan bentuk kuku, merawat jaringan sekitar kuku, merendam dan menyikat kuku, serta melakukan pemijatan pada lengan. Tidak semua orang memiliki tangan dan kuku yang bagus, maka perawatan dan pemeliharaan kulit tangan dan kuku yang baik dan teratur dapat mengatasi ketidaksempurnaan pada bentuk kuku tersebut.
-</p>
+          <p>Menurut Dharmayanti et al. (2022), perawatan tangan adalah pengaplikasian kosmetika dan peralatan khusus perawatan tangan dan kuku dengan disertakan tindakan pembersihan, merapikan bentuk kuku, merawat jaringan sekitar kuku, merendam dan menyikat kuku, serta melakukan pemijatan pada lengan. Tidak semua orang memiliki tangan dan kuku yang bagus, maka perawatan dan pemeliharaan kulit tangan dan kuku yang baik dan teratur dapat mengatasi ketidaksempurnaan pada bentuk kuku tersebut.</p>
+      <p>Perawatan tangan atau manicure merupakan bentuk perawatan kecantikan yang bertujuan untuk menjaga kebersihan, kesehatan, dan keindahan tangan serta kuku. Perawatan ini meliputi pembersihan, perendaman, penyikatan kuku, perawatan kutikula, pembentukan kuku, serta pemijatan pada tangan dan lengan dengan bantuan kosmetika dan peralatan khusus.</p>
         </div>
       </div>
       <!-- B & C -->
@@ -562,15 +1562,15 @@ section {
         </div>
       </div>
       <!-- D. Bentuk-bentuk Tangan -->
-      <div class="card-elev" style="margin-bottom:24px;">
+       <div class="card-elev" style="margin-bottom:24px;">
         <h3 class="pill">D. Bentuk-bentuk Tangan</h3>
         <p>Ermavianti et al. (2023) mengemukakan bahwa bentuk tangan penting diketahui untuk menentukan perawatan dan bentuk kuku yang cocok. Bentuk tangan antara lain:</p>
-        <div class="grid-2">
-          <div><div class="badge-yellow">1</div><div class="note-box" style="margin-top:8px;">Tangan normal (ideal): proporsional antara panjang dan lebar jari.</div></div>
-          <div><div class="badge-yellow">2</div><div class="note-box" style="margin-top:8px;">Tangan panjang: jari ramping dan tampak memanjang.</div></div>
-          <div><div class="badge-yellow">3</div><div class="note-box" style="margin-top:8px;">Tangan kurus: tulang dan sendi terlihat jelas.</div></div>
-          <div><div class="badge-yellow">4</div><div class="note-box" style="margin-top:8px;">Tangan pendek: jari relatif pendek.</div></div>
-          <div><div class="badge-yellow">5</div><div class="note-box" style="margin-top:8px;">Tangan gemuk: jari lebih tebal, telapak cenderung besar.</div></div>
+        <div class="grid-2 hand-shapes">
+          <div><span class="badge-hand-shape">1</span><div class="note-box">Tangan normal (ideal): proporsional antara panjang dan lebar jari.</div></div>
+          <div><span class="badge-hand-shape">2</span><div class="note-box">Tangan panjang: jari ramping dan tampak memanjang.</div></div>
+          <div><span class="badge-hand-shape">3</span><div class="note-box">Tangan kurus: tulang dan sendi terlihat jelas.</div></div>
+          <div><span class="badge-hand-shape">4</span><div class="note-box">Tangan pendek: jari relatif pendek.</div></div>
+          <div><span class="badge-hand-shape">5</span><div class="note-box">Tangan gemuk: jari lebih tebal, telapak cenderung besar.</div></div>
         </div>
       </div>
       <!-- E. Kelainan pada Tangan -->
@@ -594,12 +1594,12 @@ section {
           <p class="caption">(Sumber: Komariah &amp; Prasetiangsingh, 2022)</p>
         </div>
         <ol>
-          <li>Square (kotak): Kuku berbentuk lurus dengan sudut siku.</li>
-          <li>Oval: Bentuk kuku yang meruncing lembut di ujungnya.</li>
-          <li>Squoval (kotak-oval): Kombinasi square dan oval, sudut sedikit membulat.</li>
-          <li>Almond: Memiliki sisi menyempit ke arah ujung seperti kacang almond.</li>
-          <li>Coffin/Ballerina: Menyerupai peti mati atau sepatu balerina.</li>
-          <li>Stiletto: Kuku panjang dengan ujung sangat runcing.</li>
+          <li><em>Square</em> (kotak): Kuku berbentuk lurus dengan sudut siku.</li>
+          <li><em>Oval</em>: Bentuk kuku yang meruncing lembut di ujungnya.</li>
+          <li><em>Squoval</em>(kotak-oval): Kombinasi square dan oval, sudut sedikit membulat.</li>
+          <li><em>Almond</em>: Memiliki sisi menyempit ke arah ujung seperti kacang almond.</li>
+          <li><em>Coffin/Ballerina</em>: Menyerupai peti mati atau sepatu balerina.</li>
+          <li><em>Stiletto</em>: Kuku panjang dengan ujung sangat runcing.</li>
         </ol>
         
       </div>
@@ -608,14 +1608,14 @@ section {
         <h3 class="pill">G. Kelainan-kelainan Pada Kuku</h3>
         <p>Menurut Rahmiati et al. (2025), beberapa klasifikasi kelainan kuku:</p>
         <div class="grid-3 side-num">
-          <div><div class="badge-yellow">1</div><div><em>Ingrown toenails</em> (cantengan)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoHaWluOzDxSZv67C254FGU_CyYPLLywkIiO3TVBhJiwkJkHtfjntWWoKzTEFyV4WMAjNj8cZAJwGJM3jlZNXEabYTTC_3-CkdWKeSOrCdKZOKNjNAQcyj5Un1w02CP1e9Lt9-dBqCRl55HdpFwqUukUnh3SFmV9BkJh0QI4Z1GUcKnCWGzyF4YzFFQxex/s200/image68.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">2</div><div><em>Onikomikosis</em> (Infeksi Jamur Kuku)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYTOxW3AXP4iKHiub9C8MZuFyHMoxffw3CceQmZ2c9USZzMgU17WUvc-14RsXLlV7I18THVS0dogtTH2Pk1yE2RLV7jFcNvM5K9nccMZcntkl2oIPCK8s-1tS53zaknkBckcVXGKAg_6hZncAJ0iopYWzwSGUuXhIDF-yA4mTl4BLFCRcDAnBqbcnhINGn/s200/image69.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">3</div><div>Sindrom Kuku Kuning</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwJfDC6OGb8nvUKfnzYwgBxAuSw-TJvN-3LQYIeRbO2H4NxSSL-6bbSZRVjzptTSx6A96XVctZiXGNs32MCMa6bE-kHCqvLS7tJcFOWG3Lyoz4VhNDvMUIaLv0RC0C5llla7wkSpmH2zQXnzYJBC-cCQ0PRj2IURtowIqv3wJkkdKgoKUxGDmST9Mtk23j/s200/image70.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">4</div><div><em>Clubbing finger</em> (Jari tabuh)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiGDaTmaH7VTWnxkGeMRn4IV0T6o9TtXYqfy9DzTH6f9eOcB47Kn15JlUtJLdP2xwVOxv1WXc4gO4Wy1XGGjydqPaoPwZ_U1N9QRYvtMGLk9Cpknq97xYHggqUdYgDo03jEJ1U7ahyphenhyphenH_RSw-o-G2o8kFvai_TcW12hPWNr3NcDP2nvHGJ5G3_kttjGQmhm/s200/image81.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">5</div><div>Garis Mees (garis putih melintang)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSox_GkcU7OlxjUSmqthSTAuXcA0kOdgDZLr5VpaCrAZ3IXhMfJMks2XUSLIYn5jZAGKSMtFB_GFUR01XVV7ye9_3uqjKe8TfyGm9VJHZk1uCv8wQ1e6Mocx5PbkGTQtCdwOAU1arvZm4IQJEVgLALo6iflN3560URVk5Cy9XBNunSWcWt7jKeGCsep75H/s200/image90.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">6</div><div><em>Koilonikia</em> (kuku melengkung keluar)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOFSYd82fugYiV88ku4zxMewPLWXhcjOmw72-qYBBIsRvp7t5Efz5u_5E22nVhqrNmKyTcnXdG10rdaeKBkr-cP2Jjzgxys22MRkQld3rknh20fh3iMjKkpcbmz3Qss-zokoCmYXbilS9eR11tjDtN8kVhe9lFrfVTfj1VQyTb82Cy_TImY9R1z0kXYEoQ/s200/image91.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">7</div><div><em>Leukonikia</em> (garis putih pada kuku)</div><img class="img-ph" alt="Leukonychia" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKOPx6Yc0DuoFtcVb23bQaeakm43oa37nS5vfWclE9GREDTRKh62-DC63LqrUhOsPefCDHsgGmI-Itd1ZdgVZTTxQvHfMIlRLPPraA1inH_ls6RcsI7lafaIqdEMSiQyu1RInjqhVOjlxMQ14CcwfSp2lEGcRskoZnDytfxqXIlbMLAMJjMBn1qMHT7oLt/s200/image92.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">8</div><div>Kuku Terry (kuku menjadi gelap)</div><img class="img-ph" alt="Terry" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzafeoQqa0YG8G7u3kedkulLHhyphenhypheniEC-NFYdAPaDm23f5Z8bwGKLJpHoQOdswz-FvY11B8ql3mkn8QER4NjsX2ULKlslulyRc9geifV_eT3ge7T_G-ZRsKmqDgx6X8Fb53ue_awS95kVjcShuO1jO-RIC7b_7thjKy_n5emHNNxHhBmGBo09yAFhysrSbQz/s200/image93.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">1</div><div class=""><em>Ingrown toenails</em> (cantengan)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoHaWluOzDxSZv67C254FGU_CyYPLLywkIiO3TVBhJiwkJkHtfjntWWoKzTEFyV4WMAjNj8cZAJwGJM3jlZNXEabYTTC_3-CkdWKeSOrCdKZOKNjNAQcyj5Un1w02CP1e9Lt9-dBqCRl55HdpFwqUukUnh3SFmV9BkJh0QI4Z1GUcKnCWGzyF4YzFFQxex/s200/image68.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">2</div class=""><div><em>Onikomikosis</em> (Infeksi Jamur Kuku)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYTOxW3AXP4iKHiub9C8MZuFyHMoxffw3CceQmZ2c9USZzMgU17WUvc-14RsXLlV7I18THVS0dogtTH2Pk1yE2RLV7jFcNvM5K9nccMZcntkl2oIPCK8s-1tS53zaknkBckcVXGKAg_6hZncAJ0iopYWzwSGUuXhIDF-yA4mTl4BLFCRcDAnBqbcnhINGn/s200/image69.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">3</div class=""><div>Sindrom Kuku Kuning</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwJfDC6OGb8nvUKfnzYwgBxAuSw-TJvN-3LQYIeRbO2H4NxSSL-6bbSZRVjzptTSx6A96XVctZiXGNs32MCMa6bE-kHCqvLS7tJcFOWG3Lyoz4VhNDvMUIaLv0RC0C5llla7wkSpmH2zQXnzYJBC-cCQ0PRj2IURtowIqv3wJkkdKgoKUxGDmST9Mtk23j/s200/image70.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">4</div class=""><div><em>Clubbing finger</em> (Jari tabuh)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiGDaTmaH7VTWnxkGeMRn4IV0T6o9TtXYqfy9DzTH6f9eOcB47Kn15JlUtJLdP2xwVOxv1WXc4gO4Wy1XGGjydqPaoPwZ_U1N9QRYvtMGLk9Cpknq97xYHggqUdYgDo03jEJ1U7ahyphenhyphenH_RSw-o-G2o8kFvai_TcW12hPWNr3NcDP2nvHGJ5G3_kttjGQmhm/s200/image81.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">5</div class=""><div>Garis Mees (garis putih melintang)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSox_GkcU7OlxjUSmqthSTAuXcA0kOdgDZLr5VpaCrAZ3IXhMfJMks2XUSLIYn5jZAGKSMtFB_GFUR01XVV7ye9_3uqjKe8TfyGm9VJHZk1uCv8wQ1e6Mocx5PbkGTQtCdwOAU1arvZm4IQJEVgLALo6iflN3560URVk5Cy9XBNunSWcWt7jKeGCsep75H/s200/image90.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">6</div class=""><div><em>Koilonikia</em> (kuku melengkung keluar)</div><img class="img-ph"src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOFSYd82fugYiV88ku4zxMewPLWXhcjOmw72-qYBBIsRvp7t5Efz5u_5E22nVhqrNmKyTcnXdG10rdaeKBkr-cP2Jjzgxys22MRkQld3rknh20fh3iMjKkpcbmz3Qss-zokoCmYXbilS9eR11tjDtN8kVhe9lFrfVTfj1VQyTb82Cy_TImY9R1z0kXYEoQ/s200/image91.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">7</div class=""><div><em>Leukonikia</em> (garis putih pada kuku)</div><img class="img-ph" alt="Leukonychia" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKOPx6Yc0DuoFtcVb23bQaeakm43oa37nS5vfWclE9GREDTRKh62-DC63LqrUhOsPefCDHsgGmI-Itd1ZdgVZTTxQvHfMIlRLPPraA1inH_ls6RcsI7lafaIqdEMSiQyu1RInjqhVOjlxMQ14CcwfSp2lEGcRskoZnDytfxqXIlbMLAMJjMBn1qMHT7oLt/s200/image92.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">8</div class=""><div>Kuku Terry (kuku menjadi gelap)</div><img class="img-ph" alt="Terry" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzafeoQqa0YG8G7u3kedkulLHhyphenhypheniEC-NFYdAPaDm23f5Z8bwGKLJpHoQOdswz-FvY11B8ql3mkn8QER4NjsX2ULKlslulyRc9geifV_eT3ge7T_G-ZRsKmqDgx6X8Fb53ue_awS95kVjcShuO1jO-RIC7b_7thjKy_n5emHNNxHhBmGBo09yAFhysrSbQz/s200/image93.png" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
         </div>
       </div>
       <!-- H. Kontraindikasi -->
@@ -739,19 +1739,20 @@ section {
       <div id="perlengkapan" class="anchor-target"></div>
       <!-- J. Perlengkapan -->
       <div class="card-elev" style="margin-bottom:24px;">
-        <h3 class="pill">J. Perlengkap Perawatan Tangan</h3>
+        <h3 class="pill">J. Perlengkapan Perawatan Tangan</h3>
+        <br>
         <h4>Alat</h4>
         <div class="grid-3 alat-list">
-          <div><div class="badge-yellow">1</div><div>Waskom perendam tangan</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr6vyKCyvyxoiFVzzQ4CwODwAI0kIa21QHGaHrbyaw88_G8lfEkY782hNHY_KdrjnELJpnczbsRRuWQ1TcI1XgCirHufdwV1EoCpgdzBzKEpNKk9GUMc3O7OnQ8iag3ohwcwaEpOvALa19Bl9gRz8uzCsS5HLbcKa2VTUIWyGgCK83aHJMhJ5a9SSppl22/s200/image101.png" alt="Waskom perendam tangan" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
-          <div><div class="badge-yellow">2</div><div>Pendorong Kutikula</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4SUguUZww9C25hI9arcNNWuNjtPJc6Iy_sk9r02J20NSzL10DXny95UyUIijNxjjdtH_4rAoMSKvTo3A4G-vpglOUExBv8SpB0RRjR0L6jJoq_hMf0WTwzbSHO_eNyrBXHxC_6Ta4XErMV-K7f0YIVzP2hde6n5UeYbVR4sB73ryEciakSTGQoOmUqVuq/s200/image102.png" alt="Pendorong Kutikula" /><div class="caption">(Sumber: Sari, 2023)</div></div>
-          <div><div class="badge-yellow">3</div><div>Gunting Kutikula</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMwoiUc-z5jc0ABwo9MCoN1dpLIgrlWgwCXdale7T-2KfnMDMN4wivxcC9lakMa5ZhVdEgQhehfmYm2o9gjFVT5jP3fjKwGPIMie9uuzWCtwjtClvgjuQEofZ50z4OWZAiVAn99JwQxGVatGFA5TAcEDOoZnDNKrLmL1Ddnd33ZCcsCec13kT81KRT-a7U/s200/image103.png" alt="Gunting Kutikula" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">4</div><div><em>Nail brush</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj6Ejl8FPIfLtUBI3OHXiYu7WeS-mlVdzGcP-B8Y7MOAeUw6TfN3PE4D7tFp3a__V1Mf5jt-glcneB8krLGS0IHOTqSfkFTArZIpRbU3jKQjObdU-QwQltvHq0xxeSNzAqBdLhs3PLrmsi8bKpOx6sT4AqHOomoQRp9tnUTixuXidjs_xGMiAvsZJTRuJh/s200/image116.png" alt="Nail brush" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
-          <div><div class="badge-yellow">5</div><div>Kikir Amplas</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjq2V2RbQD9LdH7nTFKvsH6aBpCugtTkejYfYZmZP1LhxM-fnGW0HNALP8ByGZ01rpu9wbx3nkJZu5MDJAOMAscjyPPNechT6brhEkoRgpg7c3zNYck6tdoLGfKP5CnhhcGzfTQ6FKab542c-rWgpm3DAzcFSH3kpA0A7i682dd-iMtGdNSSH_SGZgpm9vl/s200/image117.png" alt="Kikir Amplas" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
-          <div><div class="badge-yellow">6</div><div><em>Nail Buffer</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicX3SDZPuy5equqSQkq6mYlcbhWBLUA3W2YO-kwH87Xl0yB326Ib1wMuEdz_GNVu58FJOm93s2pgLOWmGbHteH7aI9Kn19pJpt4aSQuzh0ooU_QuqJrdpMHaZtT72KpNNOCkgReq42CwMikU-xFI3e3xsLrgfuxM7pPa7uUA1p-JIC5HA6K4EHZyXC63Ri/s200/image118.png" alt="Nail Buffer" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">7</div><div>Pinset</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiakJUpJddORzTyJH1SF5-mi6JiiO4fK8HAm6s7soyey8ET3SMdGUQEBbs_IMwnKARuSsYbtKgWrhhO4hopDD2PWSBOAeIAZEjKw97F3NXafQtvxIt74RmCCM3xdGgmOnf4o1xT3sFUNqAUqf91zPY-5lyWlxmEcgVcdStG9P19N_AsWA9LFVFiQb4kb5DQ/s200/image128.png" alt="Pinset" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
-          <div><div class="badge-yellow">8</div><div>Waskom</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXYt60q_kHknyI9SG2YalhOrAPkz_G17N6i78sitr6gJVCKfZiZ5gNfJ7lVETo3y2LJ8JeHrmv1u5oBSu14LDXv6ck3d4qYvyWcuU_KRyithdoyfAIZ2K9i0diZGe9uR-J8ZGxb9hnw3q5FU2eSDZTHCP4PK6-63k_w_3paluIrN8s6wajbjXdbyn6KjaU/s200/image129.png" alt="Nail Clipper" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
-          <div><div class="badge-yellow">9</div><div>Nail Clipper</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6tdr6Ejnw_g8g-gKXQaZw6PIx4DDXfMFTdLSK9shmQWkj49IHrk6G63LoVaOIAZgDlNDrgX8-lpwojYEKzkz-RSHyeZhAh-kA2SW8L7LjF4dB9bXWIDwzF27Kewk1Be1ZBrEXMl0F3TgXkeWgoWBNQk1YwTNDYT78lxmPihU2b3uvR_ThlckCl86QhjQK/s200/image130.png" alt="Waskom" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
-          <div><div class="badge-yellow">10</div><div>Bangku Kecil</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhifQlzKaj3TWKvj7Hxl4cY8ZLH4lbv1LptGNDZQdGUOCphV6_PoHxSnZfrkcG9s6g1mMN5VR8HslfEyugt1hW7IBCDbzHua5ENiRg32foxedgKgce-e4Rlz-YKZKiuMzShyphenhyphenv7sxnv-iGUjkBVcGhTAO6ZWZDfAlrY5Q2YciEVmFBSYOzGjojseHjKQkkbf/s200/image131.png" alt="Bangku Kecil" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">1</div><div>Waskom perendam tangan</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr6vyKCyvyxoiFVzzQ4CwODwAI0kIa21QHGaHrbyaw88_G8lfEkY782hNHY_KdrjnELJpnczbsRRuWQ1TcI1XgCirHufdwV1EoCpgdzBzKEpNKk9GUMc3O7OnQ8iag3ohwcwaEpOvALa19Bl9gRz8uzCsS5HLbcKa2VTUIWyGgCK83aHJMhJ5a9SSppl22/s200/image101.png" alt="Waskom perendam tangan" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
+          <div><div class="num-large">2</div><div>Pendorong Kutikula</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4SUguUZww9C25hI9arcNNWuNjtPJc6Iy_sk9r02J20NSzL10DXny95UyUIijNxjjdtH_4rAoMSKvTo3A4G-vpglOUExBv8SpB0RRjR0L6jJoq_hMf0WTwzbSHO_eNyrBXHxC_6Ta4XErMV-K7f0YIVzP2hde6n5UeYbVR4sB73ryEciakSTGQoOmUqVuq/s200/image102.png" alt="Pendorong Kutikula" /><div class="caption">(Sumber: Sari, 2023)</div></div>
+          <div><div class="num-large">3</div><div>Gunting Kutikula</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMwoiUc-z5jc0ABwo9MCoN1dpLIgrlWgwCXdale7T-2KfnMDMN4wivxcC9lakMa5ZhVdEgQhehfmYm2o9gjFVT5jP3fjKwGPIMie9uuzWCtwjtClvgjuQEofZ50z4OWZAiVAn99JwQxGVatGFA5TAcEDOoZnDNKrLmL1Ddnd33ZCcsCec13kT81KRT-a7U/s200/image103.png" alt="Gunting Kutikula" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">4</div><div><em>Nail brush</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj6Ejl8FPIfLtUBI3OHXiYu7WeS-mlVdzGcP-B8Y7MOAeUw6TfN3PE4D7tFp3a__V1Mf5jt-glcneB8krLGS0IHOTqSfkFTArZIpRbU3jKQjObdU-QwQltvHq0xxeSNzAqBdLhs3PLrmsi8bKpOx6sT4AqHOomoQRp9tnUTixuXidjs_xGMiAvsZJTRuJh/s200/image116.png" alt="Nail brush" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
+          <div><div class="num-large">5</div><div>Kikir Amplas</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjq2V2RbQD9LdH7nTFKvsH6aBpCugtTkejYfYZmZP1LhxM-fnGW0HNALP8ByGZ01rpu9wbx3nkJZu5MDJAOMAscjyPPNechT6brhEkoRgpg7c3zNYck6tdoLGfKP5CnhhcGzfTQ6FKab542c-rWgpm3DAzcFSH3kpA0A7i682dd-iMtGdNSSH_SGZgpm9vl/s200/image117.png" alt="Kikir Amplas" /><div class="caption">(Sumber: Ermavianti et al., 2023)</div></div>
+          <div><div class="num-large">6</div><div><em>Nail Buffer</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicX3SDZPuy5equqSQkq6mYlcbhWBLUA3W2YO-kwH87Xl0yB326Ib1wMuEdz_GNVu58FJOm93s2pgLOWmGbHteH7aI9Kn19pJpt4aSQuzh0ooU_QuqJrdpMHaZtT72KpNNOCkgReq42CwMikU-xFI3e3xsLrgfuxM7pPa7uUA1p-JIC5HA6K4EHZyXC63Ri/s200/image118.png" alt="Nail Buffer" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">7</div><div>Pinset</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiakJUpJddORzTyJH1SF5-mi6JiiO4fK8HAm6s7soyey8ET3SMdGUQEBbs_IMwnKARuSsYbtKgWrhhO4hopDD2PWSBOAeIAZEjKw97F3NXafQtvxIt74RmCCM3xdGgmOnf4o1xT3sFUNqAUqf91zPY-5lyWlxmEcgVcdStG9P19N_AsWA9LFVFiQb4kb5DQ/s200/image128.png" alt="Pinset" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
+          <div><div class="num-large">8</div><div>Waskom</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXYt60q_kHknyI9SG2YalhOrAPkz_G17N6i78sitr6gJVCKfZiZ5gNfJ7lVETo3y2LJ8JeHrmv1u5oBSu14LDXv6ck3d4qYvyWcuU_KRyithdoyfAIZ2K9i0diZGe9uR-J8ZGxb9hnw3q5FU2eSDZTHCP4PK6-63k_w_3paluIrN8s6wajbjXdbyn6KjaU/s200/image129.png" alt="Nail Clipper" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">9</div><div>Nail Clipper</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6tdr6Ejnw_g8g-gKXQaZw6PIx4DDXfMFTdLSK9shmQWkj49IHrk6G63LoVaOIAZgDlNDrgX8-lpwojYEKzkz-RSHyeZhAh-kA2SW8L7LjF4dB9bXWIDwzF27Kewk1Be1ZBrEXMl0F3TgXkeWgoWBNQk1YwTNDYT78lxmPihU2b3uvR_ThlckCl86QhjQK/s200/image130.png" alt="Waskom" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">10</div><div>Bangku Kecil</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhifQlzKaj3TWKvj7Hxl4cY8ZLH4lbv1LptGNDZQdGUOCphV6_PoHxSnZfrkcG9s6g1mMN5VR8HslfEyugt1hW7IBCDbzHua5ENiRg32foxedgKgce-e4Rlz-YKZKiuMzShyphenhyphenv7sxnv-iGUjkBVcGhTAO6ZWZDfAlrY5Q2YciEVmFBSYOzGjojseHjKQkkbf/s200/image131.png" alt="Bangku Kecil" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
         </div>
       </div>
     </div>
@@ -762,38 +1763,39 @@ section {
       <div class="card-elev" style="margin-bottom:24px;">
         <h4>Bahan</h4>
         <div class="grid-3 side-num">
-          <div><div class="badge-yellow">1</div><div><em>Antiseptic</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhZ9HGL_CkW5-43uMQGpP_oWoHpoP0yeRZsWXzZ5C8StF5OYuMKCwSV1_10NXVUk7cEH-Rn_ivas3JfUnmHCLctUHegkRpiTgsW5rvdlRmIvhwDbb8VG5B5rm8c9Pei9tpSITwg2-ObENUOojYSdPbfCtl71dE2Cn0kJjE1xBO8v6OPZEqd-Tw1mpVpXDp/s200/image145.png" alt="Antiseptic" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">2</div><div>Garam Spa</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLORfIXIrsQ257fyBTntJL8FfUBgJU6IiEh7NCtxqZARwmBOB2tbFUW2G6BqLEqgsaEibrXcL_GqaDp5PTRkrQie2BmZ5T5fTWrSTPHYCQGDvfSQ4NgEh8aevdLgbnMLKspkkcdrhd4yhedTQ1iCO6aXYZEl-RuMvi_zUpf2MXgpo7FAF6Kfy8fbd4tpP3/s200/image146.png" alt="Garam Spa" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
-          <div><div class="badge-yellow">3</div><div>Kapas</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcAzZZdYpMofRnlbltcZntsjiLYFFqFJC0O0vsUMN-V2yFfBc1NiYe-IU7Lyf8OPMZFlncjgwa-xsyQJtDkj1dNv7tw7mJdhmcJcmhnv-pDoGGanUZ-4r0jW10BMYadT6Ov9m3LajxaBmXdWYAOFMiWmvwijFOhPvRZ8iiu0tl8v_5D2mMNpA-PxPKfFh-/s200/image147.png" alt="Kapas" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
-          <div><div class="badge-yellow">4</div><div><em>Tissue</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlfyTmTphTTL1ej3SBmUr8eUtj2IVvFzNB981zpSW46bsVjbfcrrQwHbJTcHK1iDMxWuaDnJ78sIovWH7xYYA8uzfK0tuXzYnTq5TKWH4ZnxHvvt_Zo3ky0No8N2Jg3xKgM4sBMGdMHAg_iT1ka1gFnk8EJNFHeMCRTBNRTy-btxGz0Rfsd6NsfD6IEb_C/s200/image148.png" alt="Tissue" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
-          <div><div class="badge-yellow">5</div><div><em>Cotton Bud</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFygb_4ddA5cwFYcraGCGncRdZ5Ra3athAUUlmizTJ7CogN_f9XMHu1DlUndqI39mkBJbhY8dVFF9ylRCWEa95a0cLzN0uM5Bw9EyX7tRaeIyuMSuHcmcvQhPvJgok98Mn30q45FLWdbRba3boIUTTsK6kVdAisCMongKFCrgnRkj41yEUWC21kfaLT6cr/s200/image149.png" alt="Cotton Bud" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
-          <div><div class="badge-yellow">6</div><div>Masker Mulut</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQBGCh_rUq5EpTS9tJGFXKkc9I7pZxjwQLJ2OJ6XdEHhyphenhyphenmjyGkN9KcI8g21aaXuGrH4Bu9HA7xnKhq6zaAjQQEppesWCJTCJ-yMRDrz7qCwB5tYmWC0PdRpAW5EL2dsZgLgTJnjoXuG17PadN1X-39rbH2uFlVuPvOyKCtlyblfip1GiOPqgiumwPaF3zg/s200/image150.png" alt="Masker" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
+          <div><div class="num-large">1</div><div><em>Antiseptic</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhZ9HGL_CkW5-43uMQGpP_oWoHpoP0yeRZsWXzZ5C8StF5OYuMKCwSV1_10NXVUk7cEH-Rn_ivas3JfUnmHCLctUHegkRpiTgsW5rvdlRmIvhwDbb8VG5B5rm8c9Pei9tpSITwg2-ObENUOojYSdPbfCtl71dE2Cn0kJjE1xBO8v6OPZEqd-Tw1mpVpXDp/s200/image145.png" alt="Antiseptic" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">2</div><div>Garam Spa</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLORfIXIrsQ257fyBTntJL8FfUBgJU6IiEh7NCtxqZARwmBOB2tbFUW2G6BqLEqgsaEibrXcL_GqaDp5PTRkrQie2BmZ5T5fTWrSTPHYCQGDvfSQ4NgEh8aevdLgbnMLKspkkcdrhd4yhedTQ1iCO6aXYZEl-RuMvi_zUpf2MXgpo7FAF6Kfy8fbd4tpP3/s200/image146.png" alt="Garam Spa" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">3</div><div>Kapas</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcAzZZdYpMofRnlbltcZntsjiLYFFqFJC0O0vsUMN-V2yFfBc1NiYe-IU7Lyf8OPMZFlncjgwa-xsyQJtDkj1dNv7tw7mJdhmcJcmhnv-pDoGGanUZ-4r0jW10BMYadT6Ov9m3LajxaBmXdWYAOFMiWmvwijFOhPvRZ8iiu0tl8v_5D2mMNpA-PxPKfFh-/s200/image147.png" alt="Kapas" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
+          <div><div class="num-large">4</div><div><em>Tissue</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlfyTmTphTTL1ej3SBmUr8eUtj2IVvFzNB981zpSW46bsVjbfcrrQwHbJTcHK1iDMxWuaDnJ78sIovWH7xYYA8uzfK0tuXzYnTq5TKWH4ZnxHvvt_Zo3ky0No8N2Jg3xKgM4sBMGdMHAg_iT1ka1gFnk8EJNFHeMCRTBNRTy-btxGz0Rfsd6NsfD6IEb_C/s200/image148.png" alt="Tissue" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
+          <div><div class="num-large">5</div><div><em>Cotton Bud</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFygb_4ddA5cwFYcraGCGncRdZ5Ra3athAUUlmizTJ7CogN_f9XMHu1DlUndqI39mkBJbhY8dVFF9ylRCWEa95a0cLzN0uM5Bw9EyX7tRaeIyuMSuHcmcvQhPvJgok98Mn30q45FLWdbRba3boIUTTsK6kVdAisCMongKFCrgnRkj41yEUWC21kfaLT6cr/s200/image149.png" alt="Cotton Bud" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
+          <div><div class="num-large">6</div><div>Masker Mulut</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQBGCh_rUq5EpTS9tJGFXKkc9I7pZxjwQLJ2OJ6XdEHhyphenhyphenmjyGkN9KcI8g21aaXuGrH4Bu9HA7xnKhq6zaAjQQEppesWCJTCJ-yMRDrz7qCwB5tYmWC0PdRpAW5EL2dsZgLgTJnjoXuG17PadN1X-39rbH2uFlVuPvOyKCtlyblfip1GiOPqgiumwPaF3zg/s200/image150.png" alt="Masker" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
         </div>
       </div>
       <!-- Lenan -->
       <div class="card-elev" style="margin-bottom:24px;">
         <h4>Lenan</h4>
         <div class="grid-3 side-num">
-          <div><div class="badge-yellow">1</div><div><em>Waslap</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwIofTVdtJWtxd2cPWVolcN19RwLwfEZsvn45_Z6Qj0nIfpKZZCb1sk7n28W02reJJr31nXL6YvtnJeg4s2Hg7VyJPkMlSmQdefG-RHeJylB6lRNs7GZyLbHr5g9TsFOY5WqsVY76okIDIuOet1nWlGfx2MIsyqSZLF8esPCrkkvqlEoqWfK-VwFhSRdbM/s200/image152.png" alt="Waslap" /><div class="caption">(Sumber: Sari, 2023)</div></div>
-          <div><div class="badge-yellow">2</div><div>Handuk Kecil</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGkxqsoQsdtEJAz97b_SPAWxalOeE_NcnvcrxAzSrMbJeIL1tm1kGXkXoqMbGEiUXhfv6p62hdKo3N9A0jtukrDBegMKey0KCvIuf5UgDx7LM_8a509FRripIBQqYqnOsZmayOWNDOOHtCHajqpeDSBCuJWjOLmggvZ824SANLrZJr2o_9yrjtEPMOdSP6/s200/image153.png" alt="Handuk" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
-          <div><div class="badge-yellow">3</div><div>Bantalan Tangan</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWZf8MSR7IC7rSfwZL9oLI1uoqhwQPz-V-jAFw6hblBDi4tKohtlwXtqd_4hJYlFv-V4R9yzlN-ATyYo0O5e500SDHtckAPbZ_OyPS6soN-zGtKSxpmkDObxBVL8tS_Ni5C86spUSeHV9_GMldwIi9pYrV_RNYmSkgR6L30K6ZTk76i5J2yjg3huXVq9hg/s200/image154.png" alt="Bantalan tangan" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">1</div><div><em>Waslap</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwIofTVdtJWtxd2cPWVolcN19RwLwfEZsvn45_Z6Qj0nIfpKZZCb1sk7n28W02reJJr31nXL6YvtnJeg4s2Hg7VyJPkMlSmQdefG-RHeJylB6lRNs7GZyLbHr5g9TsFOY5WqsVY76okIDIuOet1nWlGfx2MIsyqSZLF8esPCrkkvqlEoqWfK-VwFhSRdbM/s200/image152.png" alt="Waslap" /><div class="caption">(Sumber: Sari, 2023)</div></div>
+          <div><div class="num-large">2</div><div>Handuk Kecil</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGkxqsoQsdtEJAz97b_SPAWxalOeE_NcnvcrxAzSrMbJeIL1tm1kGXkXoqMbGEiUXhfv6p62hdKo3N9A0jtukrDBegMKey0KCvIuf5UgDx7LM_8a509FRripIBQqYqnOsZmayOWNDOOHtCHajqpeDSBCuJWjOLmggvZ824SANLrZJr2o_9yrjtEPMOdSP6/s200/image153.png" alt="Handuk" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
+          <div><div class="num-large">3</div><div>Bantalan Tangan</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWZf8MSR7IC7rSfwZL9oLI1uoqhwQPz-V-jAFw6hblBDi4tKohtlwXtqd_4hJYlFv-V4R9yzlN-ATyYo0O5e500SDHtckAPbZ_OyPS6soN-zGtKSxpmkDObxBVL8tS_Ni5C86spUSeHV9_GMldwIi9pYrV_RNYmSkgR6L30K6ZTk76i5J2yjg3huXVq9hg/s200/image154.png" alt="Bantalan tangan" /><div class="caption">(Sumber: Maharani, 2022)</div></div>
         </div>
       </div>
       <!-- Kosmetik -->
       <div class="card-elev" style="margin-bottom:24px;">
         <h4>Kosmetik</h4>
         <div class="grid-3 side-num">
-          <div><div class="badge-yellow">1</div><div><em>Nail Remover</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwzvK_GlsrE4eRNf2sTKjQWH1P_ezyMXF-_ZuwwUBuqjYdtUwXAwk4v3RTYzlMBQT2xd6_THGGCKGJBNc5UxnrqUDFa6KG2uLZPf2YW8VL_TJXXSOF3iyIqIo6uEd8r1Gz9CnkALb6CD6ud5RfKheL0d595TQgBBWwtrwokwlz3x4i4TsLkWuYgyMbmhWV/s200/image156.png" alt="Nail Remover" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">2</div><div><em>Cream Kutikula</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIdwSkA79K0r50Vcrorbb0N_vD9D67BrOYGrTS9LACuqMIjkw1gnqEyOQXIe0PLJKNUs3EqhHaZDIJzVX7yd6nXYpeDaXauJGWQR0GO11bxVL8V2s0gfJP-QTxOUVUZaadTxc5ZqDNBid-C1TZyOJj2KsS2NitxDyA3ZAnrv7LaEvPQyIjUJVNOlvzibJX/s200/image157.png" alt="Cream Kutikula" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
-          <div><div class="badge-yellow">3</div><div><em>Massage Cream</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk2nh9hlpnVNN1GgmAiK0h4qAQ4E1CFj4ilZ87j9HcQnsy6SiP4h7CWxfwuXIsQsCCtZotlucIxwfAUfIcd91KcdDtd-derSGWknlacMTPVx_8tdj0qgASNwPxYSW12lJYoZB3Pzsd_tvMZwbuYqm_8K4pWkvFAZTcwrjTqejS-byuC7aXZHZDjjrYgoHr/s200/image158.png" alt="Massage Cream" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
-          <div><div class="badge-yellow">4</div><div>Vitamin Kuku</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZYH2U6w3ywe_sduRJgdc5zxiOWUqaLP4_3asTsvxEPS40DtZ0w6m_jcBjRZzqIBCOqCaAibNuy_Etdp6JTQkIPY11sxnlLnCGYDiSKEs5I6NHKoS9aX8gDNL1kCsy7Gi4Kq8G9Xxi8c87ZyUFq0v6TASv-8RScjpqT_xzNq97gaMKlCj4L5CkcOOocSKs/s200/image159.png" alt="Vitamin Kuku" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
-          <div><div class="badge-yellow">5</div><div><em>Hand Lotion</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit4BtjvtoMRbLG6MtLwfmPaoPeJ4_zQedICyfSJT7yrG1kywxwl2Gl4sqoayxpXNvVQxVc0gaXx4ZJaGtWN2ZsHPlIzk8v6BAm2ZyYzZnUu1b1xJthPhSO8FeHCvdpOZW5TiFEJkA_Yh1PcZ52C6q1pI7ayV-oqwpg7nbd8dm4xF11GiN80jcSFVGTRm7i/s200/image160.png" alt="Hand Lotion" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
+          <div><div class="num-large">1</div><div><em>Nail Remover</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwzvK_GlsrE4eRNf2sTKjQWH1P_ezyMXF-_ZuwwUBuqjYdtUwXAwk4v3RTYzlMBQT2xd6_THGGCKGJBNc5UxnrqUDFa6KG2uLZPf2YW8VL_TJXXSOF3iyIqIo6uEd8r1Gz9CnkALb6CD6ud5RfKheL0d595TQgBBWwtrwokwlz3x4i4TsLkWuYgyMbmhWV/s200/image156.png" alt="Nail Remover" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">2</div><div><em>Cream Kutikula</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIdwSkA79K0r50Vcrorbb0N_vD9D67BrOYGrTS9LACuqMIjkw1gnqEyOQXIe0PLJKNUs3EqhHaZDIJzVX7yd6nXYpeDaXauJGWQR0GO11bxVL8V2s0gfJP-QTxOUVUZaadTxc5ZqDNBid-C1TZyOJj2KsS2NitxDyA3ZAnrv7LaEvPQyIjUJVNOlvzibJX/s200/image157.png" alt="Cream Kutikula" /><div class="caption">(Sumber: Rahmiati et al., 2025)</div></div>
+          <div><div class="num-large">3</div><div><em>Massage Cream</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk2nh9hlpnVNN1GgmAiK0h4qAQ4E1CFj4ilZ87j9HcQnsy6SiP4h7CWxfwuXIsQsCCtZotlucIxwfAUfIcd91KcdDtd-derSGWknlacMTPVx_8tdj0qgASNwPxYSW12lJYoZB3Pzsd_tvMZwbuYqm_8K4pWkvFAZTcwrjTqejS-byuC7aXZHZDjjrYgoHr/s200/image158.png" alt="Massage Cream" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
+          <div><div class="num-large">4</div><div>Vitamin Kuku</div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZYH2U6w3ywe_sduRJgdc5zxiOWUqaLP4_3asTsvxEPS40DtZ0w6m_jcBjRZzqIBCOqCaAibNuy_Etdp6JTQkIPY11sxnlLnCGYDiSKEs5I6NHKoS9aX8gDNL1kCsy7Gi4Kq8G9Xxi8c87ZyUFq0v6TASv-8RScjpqT_xzNq97gaMKlCj4L5CkcOOocSKs/s200/image159.png" alt="Vitamin Kuku" /><div class="caption">(Sumber: Dharmayanti, 2022)</div></div>
+          <div><div class="num-large">5</div><div><em>Hand Lotion</em></div><img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit4BtjvtoMRbLG6MtLwfmPaoPeJ4_zQedICyfSJT7yrG1kywxwl2Gl4sqoayxpXNvVQxVc0gaXx4ZJaGtWN2ZsHPlIzk8v6BAm2ZyYzZnUu1b1xJthPhSO8FeHCvdpOZW5TiFEJkA_Yh1PcZ52C6q1pI7ayV-oqwpg7nbd8dm4xF11GiN80jcSFVGTRm7i/s200/image160.png" alt="Hand Lotion" /><div class="caption">(Sumber: Wahyuni, 2022)</div></div>
         </div>
 <div id="prosedur-kerja" class="anchor-target"></div>
       </div>
       <!-- K. Prosedur Perawatan Tangan -->
       <div class="card-elev" style="margin-bottom:24px;">
         <h3 class="pill">K. Prosedur Perawatan Tangan</h3>
+        <br>
         <h4>Persiapan Area Kerja</h4>
         <ol>
           <li>Membersihkan ruangan dan alat agar steril.</li>
@@ -813,11 +1815,12 @@ section {
       <!-- Prosedur Kerja: Pembersihan Tangan dan Kuku -->
       <div class="card-elev" style="margin-bottom:24px;">
         <h4>Prosedur Kerja</h4>
+        <br>
         <h4>Pembersihan Tangan dan Kuku</h4>
         <p>Lakukan pembersihan kuku dengan <em>nail remover</em> jika klien menggunakan cat kuku.</p>
         <img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhijoSiQoXWEazzvFXDbr6mzRzL0m9P-WauFiLMYutr4TAUr5izVHswPNw3WI0Ixknscqjjo8dbEeLslANAo0UQRgDWbqgX2x_q7mhJPBzz1gZY1MYVGG0eujutidBkX9Bu3I7zB2lEPSiqvE9dK7lHALSEQ_ScmNRr8Q5PTcSTSq37XOxZ2RjlWGeYLO09/s200/image164.png" alt="Bersihkan kuku" />
         <p class="caption">(Sumber: Ermavianti et al., 2023)</p>
-        <p>Siapkan waskom berisi air hangat dan garam spa. Rendam tangan, bersihkan kotoran pada jari dan kuku, lalu keringkan menggunakan waslap.</p>
+        <p>Siapkan Waskom berisi air hangat dan garam spa. Rendam tangan, bersihkan kotoran pada jari kuku, lalu keringkan menggunakan washlap. Dilanjutkan dengan mendiagnosa dan konsultasi.</p>
         <img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj91e9fyLRm6SsSOdU76_-OcOAGvDJezlMxoX8ehIk9kbfSgCMCG0SeVIrY5ZfKHPhDjyTEHDMplqW6FVxCFQSXsazaAQKyphWUaHTD05GDbEFHYVWDlnv6ywfvKJgTo61bgLrhyphenhyphenW2s4gCdI7jUxHzPN-cLOu0cHct9DcMtdqD9i1_5opfo6tZfGiS-UvhD/s200/image165.png" alt="Perendaman tangan" />
         <p class="caption">(Sumber: Wahyuni, 2022)</p>
       </div>
@@ -833,11 +1836,12 @@ section {
       <!-- Pembentukan Kuku -->
       <div class="card-elev" style="margin-bottom:24px;">
         <h4>Pembentukan Kuku</h4>
-        <p>Bentuk kuku menggunakan gunting kuku yang disesuaikan dengan besar kuku.</p>
-        <img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgwB1x1jRMA1p4PQHXXILxczAY_jO426YyKl6JXSKryKYA8lx3U1aqjp1pIMhCoHRbL8iGesaBizclHNupvu94RD-jm5w4I9Kk03MXwn-LC2VxU5ejOz3UjK5sy_OANSfGSEncsJNZx0_DsKTuhxqgvcZNlTv2Xd8bldAk0WrWN0DZvDIgo7wnFTmpU3iCS/s200/image170.png" alt="Membentuk kuku" />
-        <p class="caption">(Sumber: Ermavianti et al., 2023)</p>
-        <p>Lakukan pengikiran dengan amplas kuku, kemudian pengkilatan menggunakan <em>buffer</em> agar kuku tampak berkilau alami.</p>
-        <div class="video"><iframe src="https://drive.google.com/file/d/1jfsJgoP5r_7Gw_yNY1sTpxNteCW9Xk5m/preview" title="Pembentukan Kuku" allowfullscreen></iframe></div>
+        <p>Bentuk kuku menggunakan gunting kuku sesuaikan dengan keinginan klien dan bentuk jari.</p>
+      <div class="video" style="margin-top:12px;">
+          <iframe src="https://drive.google.com/file/d/1XMwhaavvFuMV5hlQByXBB_HeYl3vq2gS/preview" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Prosedur Perawatan Tangan" allowfullscreen></iframe>
+        </div>
+        <p class="caption">Sumber: <a href="https://youtu.be/XAMod054fZM?si=chDcHojPsWSCB8Ee" target="_blank" rel="noopener">https://youtu.be/XAMod054fZM?si=chDcHojPsWSCB8Ee</a><br/>Video oleh: Direktorat SMK Kemdikdasmen</p>
+        <p>Kemudian Lakukan pengkilatan kuku dengan menggunakan <em>buffer</em> agar kuku tampak berkilau alami.</p>
       </div>
       <!-- Gerakan Massage -->
       <div class="card-elev" style="margin-bottom:24px;">
@@ -868,11 +1872,7 @@ section {
         <img class="img-ph" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3yFjwaHLwMEcbKWkNcBu9O6-825oo1-ow-VYOS76kor-xXjc547PfAkV9pvA6PQZGtCIXfSch3436qBB6mVnFtJ4kEGoerQLcpc_yo802I-5I-iYV2pCQmGEi1XGv3_nzirsHjtEqWcFm4kZSA6-0uChN56JbsDieqyBlcx8rGvUc2tSRQ700af7itE83/s200/image175.png" alt="Tahap akhir manicure" />
         <p class="caption">(Sumber: Maharani, 2022)</p>
       </div>
-    <div class="card-elev" style="margin-bottom:24px;">
-  <h3 class="pill">Kesimpulan</h3>
-  <p>Perawatan tangan atau manicure merupakan bentuk perawatan kecantikan yang bertujuan untuk menjaga kebersihan, kesehatan, dan keindahan tangan serta kuku. Perawatan ini meliputi pembersihan, perendaman, penyikatan kuku, perawatan kutikula, pembentukan kuku, serta pemijatan pada tangan dan lengan dengan bantuan kosmetika dan peralatan khusus.</p>
-  <p>Dengan memahami pengertian, tujuan, manfaat, bentuk-bentuk tangan dan kuku, kelainan yang mungkin terjadi, kontraindikasi, perlengkapan yang dibutuhkan, serta prosedur kerja yang tepat, diharapkan perawatan tangan dapat dilakukan secara profesional dan memberikan hasil yang optimal bagi kesehatan dan penampilan tangan serta kuku.</p>
-</div>
+    
 
     
     </section>
@@ -1012,7 +2012,63 @@ section {
     <script>
       document.querySelectorAll('.nav-link').forEach(a=>{const h=a.getAttribute('href')||'';if(h.endsWith('materi.html')) a.classList.add('active');});
     </script>
-<script>(function dropdownToggleInit(){document.addEventListener("click",function(e){var t=e.target;if(t.closest(".dropdown > a")){var link=t.closest("a");var dd=link.parentElement; if(!dd.classList.contains("open")){e.preventDefault();dd.classList.add("open");} } else {document.querySelectorAll(".dropdown.open").forEach(function(d){ if(!d.contains(t)) d.classList.remove("open"); });}}); return true;})();</script></body>
+<script>(function dropdownToggleInit(){document.addEventListener("click",function(e){var t=e.target;if(t.closest(".dropdown > a")){var link=t.closest("a");var dd=link.parentElement; if(!dd.classList.contains("open")){e.preventDefault();dd.classList.add("open");} } else {document.querySelectorAll(".dropdown.open").forEach(function(d){ if(!d.contains(t)) d.classList.remove("open"); });}}); return true;})();</script>
+<div class="audio-player-wrapper">
+    <button class="music-toggle-btn" id="musicToggle" aria-label="Toggle Music">
+        <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
+        </svg>
+    </button>
+</div>
+
+<audio id="bgAudio" loop>
+    <source src="https://github.com/nex-ro/blogger/raw/refs/heads/main/musik%20manicure%20.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function() {
+    const musicToggle = document.getElementById('musicToggle');
+    const bgAudio = document.getElementById('bgAudio');
+    
+    bgAudio.volume = 0.3;
+
+    // Autoplay ketika halaman dimuat
+    function attemptAutoplay() {
+        bgAudio.play().then(() => {
+            musicToggle.classList.add('playing');
+        }).catch(error => {
+            // Jika autoplay diblokir browser, tunggu interaksi user
+            console.log('Autoplay diblokir, menunggu interaksi user');
+            document.addEventListener('click', function playOnFirstClick() {
+                bgAudio.play();
+                musicToggle.classList.add('playing');
+                document.removeEventListener('click', playOnFirstClick);
+            }, { once: true });
+        });
+    }
+
+    // Coba autoplay setelah halaman dimuat
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attemptAutoplay);
+    } else {
+        attemptAutoplay();
+    }
+
+    // Toggle play/pause
+    musicToggle.addEventListener('click', function() {
+        if (bgAudio.paused) {
+            bgAudio.play();
+            musicToggle.classList.add('playing');
+        } else {
+            bgAudio.pause();
+            musicToggle.classList.remove('playing');
+        }
+    });
+})();
+</script>
+
+
+</body>
 </html>
 <!-- BAHAN 
 <div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhZ9HGL_CkW5-43uMQGpP_oWoHpoP0yeRZsWXzZ5C8StF5OYuMKCwSV1_10NXVUk7cEH-Rn_ivas3JfUnmHCLctUHegkRpiTgsW5rvdlRmIvhwDbb8VG5B5rm8c9Pei9tpSITwg2-ObENUOojYSdPbfCtl71dE2Cn0kJjE1xBO8v6OPZEqd-Tw1mpVpXDp/s179/image145.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="200" data-original-height="179" data-original-width="167" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhZ9HGL_CkW5-43uMQGpP_oWoHpoP0yeRZsWXzZ5C8StF5OYuMKCwSV1_10NXVUk7cEH-Rn_ivas3JfUnmHCLctUHegkRpiTgsW5rvdlRmIvhwDbb8VG5B5rm8c9Pei9tpSITwg2-ObENUOojYSdPbfCtl71dE2Cn0kJjE1xBO8v6OPZEqd-Tw1mpVpXDp/s200/image145.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLORfIXIrsQ257fyBTntJL8FfUBgJU6IiEh7NCtxqZARwmBOB2tbFUW2G6BqLEqgsaEibrXcL_GqaDp5PTRkrQie2BmZ5T5fTWrSTPHYCQGDvfSQ4NgEh8aevdLgbnMLKspkkcdrhd4yhedTQ1iCO6aXYZEl-RuMvi_zUpf2MXgpo7FAF6Kfy8fbd4tpP3/s183/image146.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="200" data-original-height="183" data-original-width="169" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLORfIXIrsQ257fyBTntJL8FfUBgJU6IiEh7NCtxqZARwmBOB2tbFUW2G6BqLEqgsaEibrXcL_GqaDp5PTRkrQie2BmZ5T5fTWrSTPHYCQGDvfSQ4NgEh8aevdLgbnMLKspkkcdrhd4yhedTQ1iCO6aXYZEl-RuMvi_zUpf2MXgpo7FAF6Kfy8fbd4tpP3/s200/image146.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcAzZZdYpMofRnlbltcZntsjiLYFFqFJC0O0vsUMN-V2yFfBc1NiYe-IU7Lyf8OPMZFlncjgwa-xsyQJtDkj1dNv7tw7mJdhmcJcmhnv-pDoGGanUZ-4r0jW10BMYadT6Ov9m3LajxaBmXdWYAOFMiWmvwijFOhPvRZ8iiu0tl8v_5D2mMNpA-PxPKfFh-/s196/image147.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="200" data-original-height="123" data-original-width="196" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcAzZZdYpMofRnlbltcZntsjiLYFFqFJC0O0vsUMN-V2yFfBc1NiYe-IU7Lyf8OPMZFlncjgwa-xsyQJtDkj1dNv7tw7mJdhmcJcmhnv-pDoGGanUZ-4r0jW10BMYadT6Ov9m3LajxaBmXdWYAOFMiWmvwijFOhPvRZ8iiu0tl8v_5D2mMNpA-PxPKfFh-/s200/image147.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlfyTmTphTTL1ej3SBmUr8eUtj2IVvFzNB981zpSW46bsVjbfcrrQwHbJTcHK1iDMxWuaDnJ78sIovWH7xYYA8uzfK0tuXzYnTq5TKWH4ZnxHvvt_Zo3ky0No8N2Jg3xKgM4sBMGdMHAg_iT1ka1gFnk8EJNFHeMCRTBNRTy-btxGz0Rfsd6NsfD6IEb_C/s184/image148.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="200" data-original-height="163" data-original-width="184" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlfyTmTphTTL1ej3SBmUr8eUtj2IVvFzNB981zpSW46bsVjbfcrrQwHbJTcHK1iDMxWuaDnJ78sIovWH7xYYA8uzfK0tuXzYnTq5TKWH4ZnxHvvt_Zo3ky0No8N2Jg3xKgM4sBMGdMHAg_iT1ka1gFnk8EJNFHeMCRTBNRTy-btxGz0Rfsd6NsfD6IEb_C/s200/image148.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFygb_4ddA5cwFYcraGCGncRdZ5Ra3athAUUlmizTJ7CogN_f9XMHu1DlUndqI39mkBJbhY8dVFF9ylRCWEa95a0cLzN0uM5Bw9EyX7tRaeIyuMSuHcmcvQhPvJgok98Mn30q45FLWdbRba3boIUTTsK6kVdAisCMongKFCrgnRkj41yEUWC21kfaLT6cr/s179/image149.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="200" data-original-height="179" data-original-width="179" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFygb_4ddA5cwFYcraGCGncRdZ5Ra3athAUUlmizTJ7CogN_f9XMHu1DlUndqI39mkBJbhY8dVFF9ylRCWEa95a0cLzN0uM5Bw9EyX7tRaeIyuMSuHcmcvQhPvJgok98Mn30q45FLWdbRba3boIUTTsK6kVdAisCMongKFCrgnRkj41yEUWC21kfaLT6cr/s200/image149.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQBGCh_rUq5EpTS9tJGFXKkc9I7pZxjwQLJ2OJ6XdEHhyphenhyphenmjyGkN9KcI8g21aaXuGrH4Bu9HA7xnKhq6zaAjQQEppesWCJTCJ-yMRDrz7qCwB5tYmWC0PdRpAW5EL2dsZgLgTJnjoXuG17PadN1X-39rbH2uFlVuPvOyKCtlyblfip1GiOPqgiumwPaF3zg/s185/image150.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="200" data-original-height="185" data-original-width="185" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQBGCh_rUq5EpTS9tJGFXKkc9I7pZxjwQLJ2OJ6XdEHhyphenhyphenmjyGkN9KcI8g21aaXuGrH4Bu9HA7xnKhq6zaAjQQEppesWCJTCJ-yMRDrz7qCwB5tYmWC0PdRpAW5EL2dsZgLgTJnjoXuG17PadN1X-39rbH2uFlVuPvOyKCtlyblfip1GiOPqgiumwPaF3zg/s200/image150.png"/></a></div>

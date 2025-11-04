@@ -1,516 +1,707 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rangkuman</title>
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
 
-                  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+        #PopularPosts1,
+        #footer,
+        .page header,
+        #comments,
+        .post-share-buttons,
+        h3.post-title,
+        .bg-photo-container,
+        .bg-photo-overlay,
+        .centered-top-container,
+        .collapsed-header .centered-top-placeholder {
+            display: none;
+        }
 
-                  #PopularPosts1,
-                  #footer,
-                  .page header,
-                  #comments,
-                  .post-share-buttons,
-                  h3.post-title,
-                  .bg-photo-container,
-                  .bg-photo-overlay,
-                  .centered-top-container,
-                  .collapsed-header .centered-top-placeholder {
-                  	display: none;
-                  }
-
-
-
-                  .post-body {
-                  	color: #000;
-                    margin: 0;
-                    font-family: "Poppins", sans-serif;
-                  }
-
-                  .post-body img { height: unset; }
-
-                  .post-body h3 { color: #000; }
-
-                  footer h3 { color: #fff; }
-
-                  .Blog .blog-posts .post-outer-container .post-outer {
-                  	padding-bottom: 0;
-                  }
-
-                  .Blog .blog-posts .post-outer-container,
-                  .centered-bottom {
-                  	padding: 0;
-                  }
-
-                  .page_body .widget {
-                  	margin-bottom: 0;
-                  }
-
-                  .page_body .centered {
-                  	padding: 0;
-                    max-width: unset;
-                  }
-
-                  @media screen and (max-width: 800px) {
-                    div.widget.Blog .blog-posts .post-outer-container {
-                    	padding: 0;
-                    }
-                  }
-
-                  nav a:hover {
-                  	color: #000;
-                  }
-
-                  a:visited {
-                  	color: #000;
-                  }
-
-                  .buttons a:visited,
-                  footer a:visited {
-                  	color: #fff;
-                  }
-
-                  .post-body footer h3 {color: #fff;}
-
-
-
-                  /* Custom Styles */
-
-                  * {
-                  box-sizing: border-box;
-                }
-
-                html {
-                  scroll-behavior: smooth;
-                }
-
-          body {
+        .post-body {
+            color: #000;
             margin: 0;
             font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #c990ff 0%, #f7a3fe 100%);
-            background-attachment: fixed;
-          }
+        }
 
-                p {
-                  line-height: 180%;
-                  font-size: 16px;
-      text-align: justify;
-}
+        .post-body img { height: unset; }
+        .post-body h3 { color: #000; }
+        footer h3 { color: #fff; }
 
-                a {
-                  text-decoration: none;
-                  color: #000;
-                }
-                .dropdown {
-                  position: relative;
-                }
+        .Blog .blog-posts .post-outer-container .post-outer {
+            padding-bottom: 0;
+        }
 
-               .dropdown-content {
-              display: none;
-              position: absolute;
-              top: 40px;
-              left: 0;
-              background: #fff;
-              border-radius: 8px;
-              box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-              padding: 10px 0;
-              min-width: 160px;
-              z-index: 9999; /* Penting: taruh di atas semua */
+        .Blog .blog-posts .post-outer-container,
+        .centered-bottom {
+            padding: 0;
+        }
+
+        .page_body .widget {
+            margin-bottom: 0;
+        }
+
+        .page_body .centered {
+            padding: 0;
+            max-width: unset;
+        }
+
+        @media screen and (max-width: 800px) {
+            div.widget.Blog .blog-posts .post-outer-container {
+                padding: 0;
             }
+        }
 
-                .dropdown-content a {
-                  display: block;
-                  padding: 8px 16px;
-                  color: #000;
-                }
+        nav a:hover {
+            color: #000;
+        }
 
-                .dropdown-content a:hover {
-                  background: #f5f5f5;
-                }
+        a:visited {
+            color: #000;
+        }
 
-          .dropdown:hover .dropdown-content,
-          .dropdown:focus-within .dropdown-content,
-          .dropdown.open .dropdown-content {
+        .buttons a:visited,
+        footer a:visited {
+            color: #fff;
+        }
+
+        .post-body footer h3 {
+            color: #fff;
+        }
+
+        /* CSS Lainnya tetap sama seperti sebelumnya */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+        
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background-attachment: fixed;
+            color: #000;
+        }
+
+        p {
+            line-height: 180%;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Top Gradient Background */
+        .top-gradient-bg {
+            position: relative;
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(90deg, #c2cefe 0%, #f7a3fe 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        /* Header Logo */
+        .header-logo {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            display: grid;
+            place-items: center;
+            z-index: 2;
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-          }
+        }
 
-                nav {
-                  position: fixed;
-                  top: 30px;
-                  background: linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0.9) 0%,
-                    rgba(255, 254, 254, 0.4) 100%
-                  );
-                  backdrop-filter: blur(10px);
-                  width: 1100px;
-                  left: 50%;
-                  transform: translateX(-50%);
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  padding: 12px 32px;
-                  border-radius: 24px;
-                  box-shadow: 0 4px 50px -8px rgba(0, 0, 0, 0.2);
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 30px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 254, 254, 0.4) 100%);
+            backdrop-filter: blur(10px);
+            width: min(1100px, calc(100% - 30px));
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 32px;
+            border-radius: 24px;
+            box-shadow: 0 4px 50px -8px rgba(0, 0, 0, 0.2);
             z-index: 10000;
-            justify-content: flex-start; /* biar item mulai dari kiri */
-            gap: 60px; /* jarak antara logo dan menu */
-          }
+            gap: 60px;
+        }
 
-      nav .logo {
-        font-weight: bold;
-        font-size: 18px;
-        color: #8300b6;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-      }
+        nav .logo {
+            font-weight: bold;
+            font-size: 18px;
+            color: #8300b6;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+        }
 
-                /* Header top-left circular logo */
-                .header-logo { position: absolute; top: 12px; left: 14px; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background:#fff; border:2px solid rgba(0,0,0,0.08); display:grid; place-items:center; z-index:2; }
-                .header-logo img { width:100%; height:100%; object-fit:cover; display:block; }
-                /* Hide logo image inside navbar; header holds the logo */
-                nav .logo .logo-mark { display: none !important; }
-      nav .logo .logo-mark { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: #fff; border: 2px solid rgba(0,0,0,0.08); align-items: center; justify-content: center; }
-      nav .logo .logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      nav .logo .logo-text { line-height: 1; }
+        nav .logo .logo-mark {
+            display: none;
+        }
 
-                nav .nav-items {
-                  gap: 28px; /* kecilin jarak antar menu */
-                  flex-wrap: nowrap; /* cegah turun ke bawah */
-                  overflow: visible; /* kalau ga muat, bisa scroll horizontal */
-                  scrollbar-width: none; /* sembunyikan scrollbar */
-                   flex: 1;
-                  display: flex;
-                  justify-content: flex-end;
-                }
-                nav .nav-items::-webkit-scrollbar {
-                  display: none; /* sembunyikan scrollbar di browser Webkit */
-                }
+        nav .nav-items {
+            display: flex;
+            gap: 28px;
+            flex-wrap: nowrap;
+            overflow: visible;
+            flex: 1;
+            justify-content: flex-end;
+        }
 
-          .custom-container {
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+            min-width: 160px;
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 8px 16px;
+            color: #000;
+        }
+
+        .dropdown-content a:hover {
+            background: #f5f5f5;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content,
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+
+        nav .menu-icon {
+            display: none;
+        }
+
+        /* Container */
+        .custom-container {
             max-width: 900px;
             margin-inline: auto;
-          }
+            padding: 0 16px;
+        }
 
-          nav .nav-items { overflow-y: visible; position: relative; }
+        /* Section */
+        section {
+            margin-top: 30px;
+            padding: 50px 0px;
+        }
 
-                /* Header */
+        .guide-hero {
+            padding: 40px 16px 40px;
+        }
 
-                header.custom-header { display:none; }
+        /* Summary Card */
+        .summary-card {
+            background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
+            border: 2px solid #d3b6ff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 40px -12px rgba(126, 87, 194, 0.35);
+        }
 
-                h1 {
-                  font-size: 50px;
-                  line-height: 130%;
-                  margin: 0;
-                  background: linear-gradient(90deg, #230127 0%, #9e08fb 100%);
-                  -webkit-text-fill-color: transparent;
-                  -webkit-background-clip: text;
-                  background-clip: text;
-                }
+        .summary-card h2 {
+            margin: 0 0 16px;
+            text-align: center;
+            text-decoration: underline;
+            color: #8300b6;
+        }
 
-                .buttons {
-                  display: flex;
-                  gap: 24px;
-                }
+        .summary-card p {
+            margin: 16px 0;
+            text-align: justify;
+        }
 
-                .download-btn {
-                  background: #000;
-                  color: #fff;
-                  display: flex;
-                  align-items: center;
-                  gap: 16px;
-                  padding: 8px 16px;
-                  border-radius: 10px;
-                  font-size: 14px;
-                  width: 210px;
-                }
+        /* Summary Image */
+        .summary-image {
+            margin: 24px 0;
+            text-align: center;
+        }
 
-                .download-btn .btn-icon img { height: 36px; display: flex; }
-                .download-btn .btn-text div:first-child { text-transform: uppercase; }
-                .download-btn .btn-text div:last-child { font-weight: bold; }
+        .summary-image img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
+            display: inline-block;
+        }
 
-                /* Featured Section */
-                section { padding: 50px 32px; }
-                section h2 { color: #8300b6; text-align: center; margin: 0 0 16px 0; }
+        /* Flowchart Manicure - Styling dengan background kuning */
+        .flowchart-manicure {
+            margin-top: 40px;
+        }
 
-                /* Mobile adjustments and other sections kept identical to index */
-                /* ... full style from index retained up to the end ... */
-
-                body.js-loaded .page { display: none; }
-                body.js-loaded .page.active { display: block; }
-                
-                section { margin-top: 30px; }
-
-                /* Hidden Items  */
-                nav .menu-icon,
-                .mobile-nav-menu {
-                  display: none;
-                }
-
-                @media (max-width: 600px) {
-                  nav .nav-items { display: none; }
-                  body { background: linear-gradient(135deg, #c990ff 0%, #f7a3fe 100%); }
-                  nav { width: calc(100% - 30px); }
-                  nav .menu-icon { display: block; cursor: pointer; }
-                  nav .menu-icon img { height: 30px; display: flex; }
-                }
-                /* Guide styles */
-                /* Hero gradient band matching index */
-                .guide-hero { padding: 40px 16px 40px; background: transparent; }
-                .guide-card {
-                  background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
-                  backdrop-filter: blur(6px);
-                  border: 2px solid #d3b6ff;
-                  border-radius: 16px;
-                  padding: 24px;
-                  box-shadow: 0 10px 40px -12px rgba(126, 87, 194, .35);
-                }
-                .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
-                .step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start;
-      text-align: justify;
+        .flowchart-manicure-container {
+    background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
+    border: 2px solid #d3b6ff;
+    border-radius: 16px;
+    padding: 35px 20px;
+    box-shadow: 0 8px 30px -10px rgba(126, 87, 194, 0.35);
 }
-                .step .num { background: #8300b6; color: #fff; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; font-size: 14px; font-weight: 700; margin-top: 4px; }
-                .icons-list { list-style: none; padding: 12px 0 0; margin: 8px 0 0; display: grid; gap: 12px; }
-                .icons-list li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
-                .icon-circle { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
-                .icon-circle.home { background: linear-gradient(135deg, #63a4ff, #83eaf1); }
-                .icon-circle.next { background: linear-gradient(135deg, #ff9f43, #ffb56b); }
-                .icon-circle.prev { background: linear-gradient(135deg, #ff6b6b, #ff8c8c); }
-                .icon-circle svg { width: 20px; height: 20px; display: block; }
-                .guide-card h2 { margin-top: 0; }
 
-                /* Fixed gradient behind navbar (reliable across browsers) */
-               .top-gradient-bg {
-        position: relative; /* ubah dari fixed jadi relative */
-        width: 100%;
-        height: 140px; /* tinggi dipendekkan */
-        background: linear-gradient(90deg, #c2cefe 0%, #f7a3fe 100%);
-        z-index: 1;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-      }
-
-                .summary-wrap { position:relative;
-      text-align: justify;
+.flowchart-manicure-title {
+    text-align: center;
+    color: #8300b6;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-decoration: underline;
 }
-            .summary-card{
-              background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
-              border: 2px solid #d3b6ff;
-              border-radius:16px;
-              padding:18px 20px;
-              box-shadow: 0 10px 40px -12px rgba(126, 87, 194, .35);
+
+        .manicure-flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .manicure-flow-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .manicure-flow-box {
+            background: #fff;
+            color: #000;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s;
+            text-align: center;
+        }
+
+        .manicure-flow-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+        }
+
+        .manicure-flow-arrow {
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 6px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .summary-card {
+                padding: 20px;
             }
-            .summary-card h2{ margin:0 0 8px; text-align:center; text-decoration:underline; }
-            .summary-card p { margin:10px 0;
-      text-align: justify;
-}
-    </style>
-  </head>
-  <body>
-    <div class="top-gradient-bg" aria-hidden="true"><a class="header-logo" href="home_29.html" aria-label="Home"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" /></a></div>
-<nav>
-  <a class="logo" href="home_29.html"><span class="logo-mark"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" /></span><span class="logo-text">Perawatan Tangan</span></a>
-  <div class="nav-items">
-    <a class="nav-link" href="home_29.html">Home</a>
-    <a class="nav-link" href="tujuan.html">ATP</a>
-    <div class="dropdown">
-      <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
-      <div class="dropdown-content">
-        <a href="materi.html#kajian-teori">Kajian Teori</a>
-        <a href="materi.html#lembar-diagnosa">Lembar Diagnosa</a>
-        <a href="materi.html#perlengkapan">Perlengkapan</a>
-        <a href="materi.html#prosedur-kerja">Prosedur Kerja</a>
-      </div>
-    </div>
-    <a class="nav-link" href="rangkuman.html">Rangkuman</a>
-    <a class="nav-link" href="quiz.html">Evaluasi</a>
-    <a class="nav-link" href="glosarium.html">Glosarium</a>
-    <a class="nav-link" href="profil.html">Profil Pengembang</a>
-  </div>
 
-  <div class="menu-icon">
-    <img alt="menu" src="#" />
-  </div>
-</nav>
+            .summary-card h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .summary-image img {
+                max-width: 400px;
+            }
+
+            .flowchart-manicure-title {
+                font-size: 1.2rem;
+            }
+
+            .flowchart-manicure-container {
+                padding: 28px 15px;
+            }
+
+            .manicure-flow-box {
+                font-size: 13px;
+                padding: 12px 18px;
+            }
+
+            .manicure-flow-arrow {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav .nav-items {
+                display: none;
+            }
+
+            nav {
+                padding: 12px 20px;
+                gap: 20px;
+            }
+
+            nav .logo {
+                font-size: 16px;
+            }
+
+            nav .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+
+            nav .menu-icon img {
+                height: 30px;
+                display: flex;
+            }
+
+            .guide-hero {
+                padding: 0px 0px 30px;
+            }
+
+            section {
+                margin-top: 20px;
+                padding: 30px 16px;
+            }
+
+            .summary-card {
+                padding: 18px;
+            }
+
+            .summary-card h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 170%;
+            }
+
+            .summary-image img {
+                max-width: 100%;
+            }
+
+            .flowchart-manicure-title {
+                font-size: 1.1rem;
+            }
+
+            .flowchart-manicure-container {
+                padding: 22px 12px;
+            }
+
+            .manicure-flow-box {
+                font-size: 12px;
+                padding: 10px 15px;
+            }
+
+            .manicure-flow-arrow {
+                font-size: 18px;
+                margin: 0 4px;
+            }
+
+            .manicure-flow-row {
+                gap: 8px;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav {
+                padding: 10px 16px;
+            }
+
+            nav .logo {
+                font-size: 14px;
+            }
+
+            .summary-card {
+                padding: 16px;
+            }
+
+            .summary-card h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            .manicure-flow-box {
+                font-size: 11px;
+                padding: 8px 12px;
+            }
+        }
+        .audio-player-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+}
+
+.music-toggle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+}
+
+.music-toggle-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.music-icon {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn.playing .music-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .music-toggle-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="top-gradient-bg" aria-hidden="true">
+        <a class="header-logo" href="home_29.html" aria-label="Home">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" />
+        </a>
+    </div>
+
+    <nav>
+        <a class="logo" href="home_29.html">
+            <span class="logo-mark">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" />
+            </span>
+            <span class="logo-text">Perawatan Tangan</span>
+        </a>
+        <div class="nav-items">
+            <a class="nav-link" href="home_29.html">Home</a>
+            <a class="nav-link" href="tujuan.html">ATP</a>
+            <div class="dropdown">
+                <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
+                <div class="dropdown-content">
+                    <a href="materi.html#kajian-teori">Kajian Teori</a>
+                    <a href="materi.html#lembar-diagnosa">Lembar Analisa</a>
+                    <a href="materi.html#perlengkapan">Perlengkapan</a>
+                    <a href="materi.html#prosedur-kerja">Prosedur Kerja</a>
+                </div>
+            </div>
+            <a class="nav-link active" href="rangkuman.html">Rangkuman</a>
+            <a class="nav-link" href="quiz.html">Evaluasi</a>
+            <a class="nav-link" href="glosarium.html">Glosarium</a>
+            <a class="nav-link" href="profil.html">Profil Pengembang</a>
+        </div>
+        <div class="menu-icon">
+            <img alt="menu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none' stroke='%238300b6' stroke-width='2'%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E" />
+        </div>
+    </nav>
 
     <div class="custom-container">
-      <section id="rangkuman" class="page active">
-        <div class="guide-hero">
-          <div class="custom-container">
-            <div class="summary-wrap">
-              <div class="summary-card">
-                <h2>Rangkuman</h2>
-                <p>
-                  Perawatan tangan atau <em>manicure</em> merupakan salah satu
-                  bentuk perawatan kecantikan yang berfungsi menjaga kebersihan
-                  dan keindahan tangan dan kuku. Proses perawatan meliputi
-                  pembersihan, perendaman, perawatan kutikula, pembentukan kuku,
-                  dan <em>hand lotion</em>. <em>Manicure</em> memiliki tujuan
-                  memperbaiki kondisi kuku yang rusak agar lebih sehat dan kuat,
-                  meningkatkan sirkulasi darah melalui pijatan, serta menjaga
-                  kelembaban kulit. Selain itu, perawatan juga memberi manfaat
-                  untuk mencegah infeksi jamur, mengangkat sel kulit mati,
-                  memberi efek relaksasi, serta meningkatkan rasa percaya diri
-                  karena tangan dan kuku yang rapi menunjang penampilan.
-                </p>
-                <p>
-                  Dalam praktiknya, <em>manicure</em> harus dilakukan dengan
-                  memperhatikan prosedur yang benar serta kondisi
-                  kontraindikasi. Bentuk kuku yang dipilih harus sesuai dengan
-                  kondisi jari dan kuku klien agar hasil tidak hanya indah
-                  tetapi juga nyaman. Berbagai alat, bahan, lenan, dan kosmetik
-                  digunakan secara tepat sesuai fungsi mulai dari gunting kuku,
-                  <em>nail buffer</em>, kikir, garam spa, hingga
-                  <em>cream</em> kutikula dan <em>hand lotion</em>. Terapis juga
-                  wajib memperhatikan kebersihan area kerja, sterilisasi alat,
-                  serta persiapan pribadi agar aman dan higienis. Dengan
-                  demikian, <em>manicure</em> tidak hanya sebatas mempercantik
-                  kuku tetapi juga merupakan perawatan menyeluruh untuk
-                  kesehatan, kenyamanan, dan penampilan.
-                </p>
-              </div>
+        <section id="rangkuman" class="page active">
+            <div class="guide-hero">
+                <div class="summary-wrap">
+                    <div class="summary-card">
+                        <h2>Rangkuman</h2>
+                        <p>
+                            Perawatan tangan atau <em>manicure</em> merupakan salah satu
+                            bentuk perawatan kecantikan yang berfungsi menjaga kebersihan
+                            dan keindahan tangan dan kuku. Proses perawatan meliputi
+                            pembersihan, perendaman, perawatan kutikula, pembentukan kuku,
+                            dan <em>hand lotion</em>. <em>Manicure</em> memiliki tujuan
+                            memperbaiki kondisi kuku yang rusak agar lebih sehat dan kuat,
+                            meningkatkan sirkulasi darah melalui pijatan, serta menjaga
+                            kelembaban kulit. Selain itu, perawatan juga memberi manfaat
+                            untuk mencegah infeksi jamur, mengangkat sel kulit mati,
+                            memberi efek relaksasi, serta meningkatkan rasa percaya diri
+                            karena tangan dan kuku yang rapi menunjang penampilan.
+                        </p>
+
+                        <p>
+                            Dalam praktiknya, <em>manicure</em> harus dilakukan dengan
+                            memperhatikan prosedur yang benar serta kondisi
+                            kontraindikasi. Bentuk kuku yang dipilih harus sesuai dengan
+                            kondisi jari dan kuku klien agar hasil tidak hanya indah
+                            tetapi juga nyaman. Berbagai alat, bahan, lenan, dan kosmetik
+                            digunakan secara tepat sesuai fungsi mulai dari gunting kuku,
+                            <em>nail buffer</em>, kikir, garam spa, hingga
+                            <em>cream</em> kutikula dan <em>hand lotion</em>. Terapis juga
+                            wajib memperhatikan kebersihan area kerja, sterilisasi alat,
+                            serta persiapan pribadi agar aman dan higienis. Dengan
+                            demikian, <em>manicure</em> tidak hanya sebatas mempercantik
+                            kuku tetapi juga merupakan perawatan menyeluruh untuk
+                            kesehatan, kenyamanan, dan penampilan.
+                        </p>
+                    </div>
+
+                      <!-- Gambar Rangkuman -->
+                     <div class="flowchart-manicure">
+                        <div class="flowchart-manicure-container"> 
+                            <div class="flowchart-manicure-title">Alur Prosedur Perawatan Tangan</div>
+                            <div class="manicure-flow-row">
+                                <div class="manicure-flow-box">1. Persiapan</div>
+                                <span class="manicure-flow-arrow">→</span>
+                                <div class="manicure-flow-box">2. Pembersihan tangan<br>& kuku</div>
+                                <span class="manicure-flow-arrow">→</span>
+                                <div class="manicure-flow-box">3. Pembersihan<br>Kutikula</div>
+                                <span class="manicure-flow-arrow">→</span>
+                            </div>
+                            <div class="manicure-flow-row">
+                                <div class="manicure-flow-box">4. Pembentukan<br>Kuku</div>
+                                <span class="manicure-flow-arrow">→</span>
+                                <div class="manicure-flow-box">5. Massage</div>
+                                <span class="manicure-flow-arrow">→</span>
+                                <div class="manicure-flow-box">4. Tahap akhir<br>(Pemberian Vitamin Kuku)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
 
     <script>
-      const featuresList = [
-        { icon: "#", title: "Intuitive Task Creation", description: "Easily create and manage tasks with a simple and user-friendly interface." },
-        { icon: "#", title: "Smart Reminders", description: "Set reminders to ensure you never miss an important deadline." },
-        { icon: "#", title: "Collaboration Tools", description: "Collaborate with team members, assign tasks, and track progress together." },
-        { icon: "#", title: "Progress Tracking", description: "Monitor your progress, track completed tasks, and stay motivated." },
-        { icon: "#", title: "Deadline Management", description: "Set due dates and track deadlines to stay on top of your commitments." },
-        { icon: "#", title: "File Attachments", description: "Attach files to tasks for seamless collaboration and easy access." },
-      ];
-
-      const testimonialsList = [
-        { review: "Since I started using the app, my productivity has skyrocketed...", image: "#", name: "John Smith", designation: "Tech Lead, Amazon" },
-        { review: "This app has completely changed the way I manage my tasks...", image: "#", name: "Sarah Johnson", designation: "Product Manager, Google" },
-        { review: "I've tried several task management apps, but this one takes the cake...", image: "#", name: "Emily Davis", designation: "Project Manager, Microsoft" },
-      ];
-
-      const sections = document.querySelectorAll('.page');
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      function showSection(id) {
-        sections.forEach(sec => sec.classList.remove('active'));
-        const target = document.querySelector(id);
-        if (target) target.classList.add('active');
-        window.scrollTo({ top: 0 });
-      }
-
-      // Default to section on first load
-      document.body.classList.add('js-loaded');
-      if (location.hash && document.querySelector(location.hash)) {
-        showSection(location.hash);
-      } else {
-        showSection('#rangkuman');
-      }
-
-      // Components rendering with guards
-      const featuresContent = document.querySelector('#features .content');
-      if (featuresContent) {
-        const displayFeatures = () => {
-          featuresList.forEach((f) => {
-            const card = document.createElement('div');
-            card.classList.add('feature-card');
-            card.innerHTML = `<div class=\"icon\"><img src=\"${f.icon}\" alt=\"\" /></div><h3>${f.title}</h3><p>${f.description}</p>`;
-            featuresContent.appendChild(card);
-          });
-        };
-        displayFeatures();
-      }
-
-      const testimonialCard = document.querySelector('#testimonials .testimonial-card');
-      const prevBtn = document.querySelector('#testimonials .prev-btn');
-      const nextBtn = document.querySelector('#testimonials .next-btn');
-      let currentTestimonialIndex = 0;
-      const displayTestimonial = () => {
-        if (!testimonialCard) return;
-        const t = testimonialsList[currentTestimonialIndex];
-        testimonialCard.innerHTML = `<span class=\"quote-icon\"><img src=\"#\" alt=\"\" /></span>
-          <p class=\"review\">${t.review}</p>
-          <div class=\"reviewer-info\">
-            <div class=\"image\"><img src=\"${t.image}\" alt=\"\" /></div>
-            <div class=\"details\"><div class=\"name\">${t.name}</div><div class=\"designation\">${t.designation}</div></div>
-          </div>`;
-        testimonialCard.classList.add('active');
-      };
-      if (testimonialCard) {
-        displayTestimonial();
-        if (nextBtn) nextBtn.addEventListener('click', () => { currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialsList.length; displayTestimonial(); });
-        if (prevBtn) prevBtn.addEventListener('click', () => { currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialsList.length) % testimonialsList.length; displayTestimonial(); });
-      }
-
-      const pricingContent = document.querySelector('#pricing .content');
-      if (pricingContent) {
-        const plans = [
-          { name: 'Basic', features: ['50 Tasks','Deadline Tracking','Priority Settings','Basic Reporting','Email Notifications','24/7 Customer Support'], price: 'Free', link: '#' },
-          { name: 'Pro', features: ['All from <strong>Basic</strong> plan','Advanced Tasks','Subtasks','File Attachments','Gantt Chart View','Collaborations'], price: '$29.99', link: '#' },
-          { name: 'Enterprise', features: ['All from <strong>Pro</strong> plan','Custom Branding','API Access','Data Export','Advanced Security','Custom Integrations'], price: 'Contact for pricing', link: '#' },
-        ];
-        const displayPricing = () => {
-          plans.forEach((p) => {
-            const featuresHTML = p.features.map(f => `<li><span class='icon'><img src='#'/></span>${f}</li>`).join('');
-            const html = `<h4 class=\"plan-name\">${p.name}</h4><ul class=\"plan-features\">${featuresHTML}</ul><div class=\"plan-price\">${p.price}</div><a href=\"${p.link}\" class=\"btn\">Choose</a>`;
-            const plan = document.createElement('div');
-            plan.classList.add('plan');
-            plan.innerHTML = html;
-            pricingContent.appendChild(plan);
-          });
-        };
-        displayPricing();
-      }
-
-      const menuIcon = document.querySelector('.menu-icon');
-      const mobileNavMenu = document.querySelector('.mobile-nav-menu');
-      if (menuIcon && mobileNavMenu) {
-        menuIcon.addEventListener('click', () => { mobileNavMenu.classList.toggle('active'); });
-      }
-
-      navLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href') || '';
-          if (href.startsWith('#')) {
-            e.preventDefault();
-            showSection(href);
-          }
-          if (mobileNavMenu) mobileNavMenu.classList.remove('active');
-        });
-      });
-
-      const latestPostsList = document.querySelector('#blog .latest-posts-list');
-      const generateLatestPosts = (posts) => {
-        if (!latestPostsList) return;
-        posts.forEach(post => {
-          const title = post.title.$t;
-          const defaultThumbnail = '#';
-          const thumbnailSrc = post.media$thumbnail ? post.media$thumbnail.url.replace('/s72', '/s300') : defaultThumbnail;
-          const summary = post.summary.$t;
-          const link = post.link[post.link.length - 1].href;
-          const html = `<div class=\"thumbnail\"><a href=\"${link}\"><img src=\"${thumbnailSrc}\" alt=\"\" /></a></div>
-            <a href=\"${link}\"><h3 class=\"title\">${title}</h3></a>
-            <div class=\"summary\">${summary}</div>
-            <a href=\"${link}\" class=\"read-more-btn\">Read more</a>`;
-          const postDiv = document.createElement('div');
-          postDiv.classList.add('post');
-          postDiv.innerHTML = html;
-          latestPostsList.appendChild(postDiv);
-        });
-      };
-      const handleLatestPosts = (posts) => { if (posts?.feed?.entry) generateLatestPosts(posts.feed.entry); };
-      document.querySelectorAll('.nav-link').forEach(a => { const href = a.getAttribute('href') || ''; if (href.endsWith('rangkuman.html')) a.classList.add('active'); });\r\nif (!document.querySelector('.page.active') && document.querySelector('#rangkuman')) {
-          document.querySelector('#rangkuman')?.classList.add('active');
-        }\r\nwindow.handleLatestPosts = handleLatestPosts;
+        (function dropdownToggleInit() {
+            document.addEventListener("click", function(e) {
+                var t = e.target;
+                if (t.closest(".dropdown > a")) {
+                    var link = t.closest("a");
+                    var dd = link.parentElement;
+                    if (!dd.classList.contains("open")) {
+                        e.preventDefault();
+                        dd.classList.add("open");
+                    }
+                } else {
+                    document.querySelectorAll(".dropdown.open").forEach(function(d) {
+                        if (!d.contains(t)) d.classList.remove("open");
+                    });
+                }
+            });
+            return true;
+        })();
     </script>
-    <script src="/feeds/posts/summary?alt=json-in-script&callback=handleLatestPosts&max-results=2"></script>
-    <script>
-      document.querySelectorAll('.nav-link').forEach(a=>{const h=a.getAttribute('href')||'';if(h.endsWith('rangkuman.html')) a.classList.add('active');});
-    </script>
-  <script>(function dropdownToggleInit(){document.addEventListener("click",function(e){var t=e.target;if(t.closest(".dropdown > a")){var link=t.closest("a");var dd=link.parentElement; if(!dd.classList.contains("open")){e.preventDefault();dd.classList.add("open");} } else {document.querySelectorAll(".dropdown.open").forEach(function(d){ if(!d.contains(t)) d.classList.remove("open"); });}}); return true;})();</script></body>
+   <div class="audio-player-wrapper">
+    <button class="music-toggle-btn" id="musicToggle" aria-label="Toggle Music">
+        <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
+        </svg>
+    </button>
+</div>
+
+<audio id="bgAudio" loop>
+    <source src="https://github.com/nex-ro/blogger/raw/refs/heads/main/musik%20manicure%20.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function() {
+    const musicToggle = document.getElementById('musicToggle');
+    const bgAudio = document.getElementById('bgAudio');
+    
+    bgAudio.volume = 0.3;
+
+    // Autoplay ketika halaman dimuat
+    function attemptAutoplay() {
+        bgAudio.play().then(() => {
+            musicToggle.classList.add('playing');
+        }).catch(error => {
+            // Jika autoplay diblokir browser, tunggu interaksi user
+            console.log('Autoplay diblokir, menunggu interaksi user');
+            document.addEventListener('click', function playOnFirstClick() {
+                bgAudio.play();
+                musicToggle.classList.add('playing');
+                document.removeEventListener('click', playOnFirstClick);
+            }, { once: true });
+        });
+    }
+
+    // Coba autoplay setelah halaman dimuat
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attemptAutoplay);
+    } else {
+        attemptAutoplay();
+    }
+
+    // Toggle play/pause
+    musicToggle.addEventListener('click', function() {
+        if (bgAudio.paused) {
+            bgAudio.play();
+            musicToggle.classList.add('playing');
+        } else {
+            bgAudio.pause();
+            musicToggle.classList.remove('playing');
+        }
+    });
+})();
+</script>
+
+
+</body>
 </html>
-

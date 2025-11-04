@@ -1,3 +1,4 @@
+<body>
 <style>
 
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
@@ -910,7 +911,65 @@
     }
     body.js-loaded .page { display: none; }
   body.js-loaded .page.active { display: block; }
+.audio-player-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9998;
+}
 
+.music-toggle-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+}
+
+.music-toggle-btn:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.music-icon {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    transition: all 0.3s ease;
+}
+
+.music-toggle-btn.playing .music-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .music-toggle-btn {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .music-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
   section { margin-top: 120px; }
 </style>
 
@@ -923,7 +982,7 @@
       <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
       <div class="dropdown-content">
         <a href="materi.html#kajian-teori">Kajian Teori</a>
-        <a href="materi.html#lembar-diagnosa">Lembar Diagnosa</a>
+        <a href="materi.html#lembar-diagnosa">Lembar Analisa</a>
         <a href="materi.html#perlengkapan">Perlengkapan</a>
         <a href="materi.html#prosedur-kerja">Prosedur Kerja</a>
       </div>
@@ -1295,7 +1354,7 @@
 })();
 </script>
 
- 
+
 
 <script>(function gradientParallax(){
   var secs = document.querySelectorAll('.parallax');
@@ -1316,6 +1375,61 @@
   window.addEventListener('resize', update);
   update();
 })();</script>
+
+<div class="audio-player-wrapper">
+    <button class="music-toggle-btn" id="musicToggle" aria-label="Toggle Music">
+        <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
+        </svg>
+    </button>
+</div>
+
+<audio id="bgAudio" loop>
+    <source src="https://github.com/nex-ro/blogger/raw/refs/heads/main/musik%20manicure%20.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+(function() {
+    const musicToggle = document.getElementById('musicToggle');
+    const bgAudio = document.getElementById('bgAudio');
+    
+    bgAudio.volume = 0.3;
+
+    // Autoplay ketika halaman dimuat
+    function attemptAutoplay() {
+        bgAudio.play().then(() => {
+            musicToggle.classList.add('playing');
+        }).catch(error => {
+            // Jika autoplay diblokir browser, tunggu interaksi user
+            console.log('Autoplay diblokir, menunggu interaksi user');
+            document.addEventListener('click', function playOnFirstClick() {
+                bgAudio.play();
+                musicToggle.classList.add('playing');
+                document.removeEventListener('click', playOnFirstClick);
+            }, { once: true });
+        });
+    }
+
+    // Coba autoplay setelah halaman dimuat
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attemptAutoplay);
+    } else {
+        attemptAutoplay();
+    }
+
+    // Toggle play/pause
+    musicToggle.addEventListener('click', function() {
+        if (bgAudio.paused) {
+            bgAudio.play();
+            musicToggle.classList.add('playing');
+        } else {
+            bgAudio.pause();
+            musicToggle.classList.remove('playing');
+        }
+    });
+})();
+</script>
+</body>
 
 
 
