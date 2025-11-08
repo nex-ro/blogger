@@ -299,19 +299,18 @@
         border-radius: 16px;
       }
       .num-large{ font-weight:800; font-size:44px; color:#111; background:#fff; width:54px; height:54px; border-radius:50%; display:grid; place-items:center; }
-      .note-box{ border:2px solid #ff9f43; background:#fff9f1; border-radius:8px; padding:2px;min-height: 50px;}
+      .note-box{ border:2px solid #F5C1D9; background:#fff9f1; border-radius:8px; padding:2px;min-height: 50px;}
       /* Uniform image sizing + alignment in all grids */
       .img-ph{ width:160px; height:110px; background:#e9e9e9; border-radius:8px; display:block; margin:0 auto; object-fit:cover; }
       /* Enforce uniform size even if class is missing */
       .side-num img, .alat-list img { width:160px; height:110px; object-fit:cover; }
       .grid-3 > div, .grid-2 > div { display: flex; flex-direction: column; align-items: center; }
       .grid-3 > div .num-large, .grid-2 > div .num-large { margin-bottom: 6px; }
-      /* Keep labels same height and avoid wrapping too tall */
       .grid-3 > div > div:nth-of-type(2),
       .grid-2 > div > div:nth-of-type(2) {
-        min-height: 40px; /* reserve space for up to 2 lines */
+        min-height: 40px; 
         line-height: 1.3;
-        display: -webkit-box;        /* multi-line clamp */
+        display: -webkit-box;        
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -549,7 +548,7 @@ section {
   font-size: 2em;
   height: 40px;
   padding: 0 10px;
-  background: #FFD700;
+  background: #F5C1D9;
   color: #000;
   font-weight: 800;
   font-size: 18px;
@@ -1031,14 +1030,14 @@ section {
 /* Badge ungu untuk Kelainan Kuku */
 .grid-3.side-num > div .num-large {
   color: #000;
-  background: linear-gradient(135deg, #ffe34d 0%, #ffd700 100%);
+  background: linear-gradient(135deg, #f7d3e4 0%, #F5C1D9 100%);
   box-shadow: 0 4px 12px rgba(255, 227, 77, 0.35);
 }
 
 /* Badge kuning untuk Alat, Bahan, Lenan, Kosmetik */
 .grid-3.alat-list > div .badge-yellow {
   color: #000;
-  background: linear-gradient(135deg, #ffe34d 0%, #ffd700 100%);
+  background: linear-gradient(135deg, #f3d2e2 0%, #F5C1D9 100%);
   box-shadow: 0 4px 12px rgba(255, 227, 77, 0.35);
   border: none;
 }
@@ -1313,7 +1312,7 @@ section {
   font-size: 28px;
   font-weight: 800;
   color: #000;
-  background: linear-gradient(135deg, #ffe34d 0%, #ffd700 100%);
+  background: linear-gradient(135deg, #f8d4e5 0%, #F5C1D9 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1483,6 +1482,64 @@ section {
     height: 90px;
   }
 }
+/* Ganti semua #ffe34d (kuning) menjadi #F5C1D9 (pink) */
+
+/* Sebelum: */
+.pill { 
+  background: #ffe34d; 
+}
+
+.badge-yellow { 
+  background: #ffe34d; 
+}
+
+.num-large {
+  background: linear-gradient(135deg, #f8d4e5 0%, #F5C1D9 100%);
+}
+
+.badge-yellow {
+  background: linear-gradient(135deg, #f8d4e5 0%, #F5C1D9 100%);
+}
+
+.card-elev h4::before {
+  color: #8300b6;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.card-elev h4 {
+  border-bottom: 3px solid #ffe34d;
+}
+
+/* Sesudah: */
+.pill { 
+  background: #F5C1D9; 
+  color: #2d1e6f; /* tambahkan warna teks gelap agar kontras */
+}
+
+.badge-yellow { 
+  background: #F5C1D9; 
+  color: #2d1e6f;
+}
+
+.num-large {
+  background: linear-gradient(135deg, #F5C1D9 0%, #F5A9C8 100%);
+  color: #2d1e6f;
+}
+
+.badge-yellow {
+  background: linear-gradient(135deg, #F5C1D9 0%, #F5A9C8 100%);
+  color: #2d1e6f;
+}
+
+.card-elev h4 {
+  border-bottom: 3px solid #F5C1D9;
+}
+
+.badge-hand-shape {
+  background: #F5C1D9;
+  color: #2d1e6f;
+}
 </style>
   </head>
   <body>
@@ -1492,6 +1549,8 @@ section {
   <a class="logo" href="home_29.html"><span class="logo-mark"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVHbbB5XVJEd6tmvS9is8AyLayydlIxloNU10ZS6p7TPrNSSUimBPN5rmgrMPtfxFIYTMymU_4m-ti151ECAfG09Pn-ByUoUvlKubdhkQ6uh80v4L1YIErtvN1X7zZu8XoOmfbdfEtIa9Qn3wKtSZRUKnIJ3YUa9BWxwd4jKG48YQvvm6Y7PpE6Eyo2XTD/s200/image3.png" alt="Logo" /></span><span class="logo-text">Perawatan Tangan</span></a>
   <div class="nav-items">
     <a class="nav-link" href="home_29.html">Home</a>
+                <a class="nav-link" href="petunjuk_8.html">Petunjuk</a>
+
     <a class="nav-link" href="tujuan.html">ATP</a>
     <div class="dropdown">
       <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
@@ -1509,7 +1568,7 @@ section {
   </div>
 
   <div class="menu-icon">
-    <img alt="menu" src="#" />
+            <img alt="menu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none' stroke='%238300b6' stroke-width='2'%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E" />
   </div>
 </nav>
 

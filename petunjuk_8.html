@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rangkuman</title>
+    <title>Petunjuk Pengunaan Web</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
-
-        #PopularPosts1,
+       #PopularPosts1,
         #footer,
         .page header,
         #comments,
@@ -77,13 +75,6 @@
         * {
             box-sizing: border-box;
         }
-        
-       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
-
-        * {
-            box-sizing: border-box;
-        }
-
         html {
             scroll-behavior: smooth;
         }
@@ -114,6 +105,7 @@
             background: linear-gradient(90deg, #c2cefe 0%, #f7a3fe 100%);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             z-index: 1;
+            margin-bottom: -60px;
         }
 
         /* Header Logo */
@@ -227,15 +219,31 @@
 
         /* Section */
         section {
-            margin-top: 30px;
-            padding: 50px 0px;
+            margin-top: 80px;
+            padding: 50px 16px;
         }
 
         .guide-hero {
-            padding: 40px 16px 40px;
+            padding: 0px 16px 60px;
         }
 
-        /* Summary Card */
+        /* Profile Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.3);
+            background: #e9e9e9;
+        }
+
         .summary-card {
             background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
             border: 2px solid #d3b6ff;
@@ -245,93 +253,28 @@
         }
 
         .summary-card h2 {
-            margin: 0 0 16px;
-            text-align: center;
-            text-decoration: underline;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 16px;
             color: #8300b6;
         }
 
         .summary-card p {
             margin: 16px 0;
-            text-align: justify;
-        }
-
-        /* Summary Image */
-        .summary-image {
-            margin: 24px 0;
-            text-align: center;
-        }
-
-        .summary-image img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.25);
-            display: inline-block;
-        }
-
-        /* Flowchart Manicure - Styling dengan background kuning */
-        .flowchart-manicure {
-            margin-top: 40px;
-        }
-
-        .flowchart-manicure-container {
-    background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%);
-    border: 2px solid #d3b6ff;
-    border-radius: 16px;
-    padding: 35px 20px;
-    box-shadow: 0 8px 30px -10px rgba(126, 87, 194, 0.35);
-}
-
-.flowchart-manicure-title {
-    text-align: center;
-    color: #8300b6;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-decoration: underline;
-}
-
-        .manicure-flow-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-
-        .manicure-flow-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .manicure-flow-box {
-            background: #fff;
-            color: #000;
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-            transition: transform 0.2s;
-            text-align: center;
-        }
-
-        .manicure-flow-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
-        }
-
-        .manicure-flow-arrow {
-            color: #000;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 6px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .profile-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
             .summary-card {
                 padding: 20px;
             }
@@ -342,27 +285,6 @@
 
             p {
                 font-size: 15px;
-            }
-
-            .summary-image img {
-                max-width: 400px;
-            }
-
-            .flowchart-manicure-title {
-                font-size: 1.2rem;
-            }
-
-            .flowchart-manicure-container {
-                padding: 28px 15px;
-            }
-
-            .manicure-flow-box {
-                font-size: 13px;
-                padding: 12px 18px;
-            }
-
-            .manicure-flow-arrow {
-                font-size: 20px;
             }
         }
 
@@ -390,12 +312,24 @@
                 display: flex;
             }
 
+            .top-gradient-bg {
+                height: 100px;
+                margin-bottom: -40px;
+            }
+
+            .header-logo {
+                width: 48px;
+                height: 48px;
+                top: 10px;
+                left: 10px;
+            }
+
             .guide-hero {
-                padding: 0px 0px 30px;
+                padding: 0px 16px 40px;
             }
 
             section {
-                margin-top: 20px;
+                margin-top: 60px;
                 padding: 30px 16px;
             }
 
@@ -412,31 +346,8 @@
                 line-height: 170%;
             }
 
-            .summary-image img {
-                max-width: 100%;
-            }
-
-            .flowchart-manicure-title {
-                font-size: 1.1rem;
-            }
-
-            .flowchart-manicure-container {
-                padding: 22px 12px;
-            }
-
-            .manicure-flow-box {
-                font-size: 12px;
-                padding: 10px 15px;
-            }
-
-            .manicure-flow-arrow {
-                font-size: 18px;
-                margin: 0 4px;
-            }
-
-            .manicure-flow-row {
-                gap: 8px;
-                margin-bottom: 15px;
+            .profile-image {
+                max-width: 240px;
             }
         }
 
@@ -459,11 +370,6 @@
 
             p {
                 font-size: 13px;
-            }
-
-            .manicure-flow-box {
-                font-size: 11px;
-                padding: 8px 12px;
             }
         }
         .audio-player-wrapper {
@@ -525,7 +431,6 @@
         height: 24px;
     }
 }
-
     </style>
 </head>
 <body>
@@ -545,7 +450,6 @@
         <div class="nav-items">
             <a class="nav-link" href="home_29.html">Home</a>
             <a class="nav-link" href="petunjuk_8.html">Petunjuk</a>
-
             <a class="nav-link" href="tujuan.html">ATP</a>
             <div class="dropdown">
                 <a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">Materi</a>
@@ -556,79 +460,102 @@
                     <a href="materi.html#prosedur-kerja">Prosedur Kerja</a>
                 </div>
             </div>
-            <a class="nav-link active" href="rangkuman.html">Rangkuman</a>
+            <a class="nav-link" href="rangkuman.html">Rangkuman</a>
             <a class="nav-link" href="quiz.html">Evaluasi</a>
             <a class="nav-link" href="glosarium.html">Glosarium</a>
-            <a class="nav-link" href="profil.html">Profil Pengembang</a>
+            <a class="nav-link active" href="profil.html">Profil Pengembang</a>
         </div>
         <div class="menu-icon">
             <img alt="menu" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24' fill='none' stroke='%238300b6' stroke-width='2'%3E%3Cline x1='3' y1='12' x2='21' y2='12'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cline x1='3' y1='18' x2='21' y2='18'/%3E%3C/svg%3E" />
         </div>
     </nav>
 
+       <main>
+    <section class="guide-hero">
     <div class="custom-container">
-        <section id="rangkuman" class="page active">
-            <div class="guide-hero">
-                <div class="summary-wrap">
-                    <div class="summary-card">
-                        <h2>Rangkuman</h2>
-                        <p>
-                            Perawatan tangan atau <em>manicure</em> merupakan salah satu
-                            bentuk perawatan kecantikan yang berfungsi menjaga kebersihan
-                            dan keindahan tangan dan kuku. Proses perawatan meliputi
-                            pembersihan, perendaman, perawatan kutikula, pembentukan kuku,
-                            dan <em>hand lotion</em>. <em>Manicure</em> memiliki tujuan
-                            memperbaiki kondisi kuku yang rusak agar lebih sehat dan kuat,
-                            meningkatkan sirkulasi darah melalui pijatan, serta menjaga
-                            kelembaban kulit. Selain itu, perawatan juga memberi manfaat
-                            untuk mencegah infeksi jamur, mengangkat sel kulit mati,
-                            memberi efek relaksasi, serta meningkatkan rasa percaya diri
-                            karena tangan dan kuku yang rapi menunjang penampilan.
-                        </p>
-
-                        <p>
-                            Dalam praktiknya, <em>manicure</em> harus dilakukan dengan
-                            memperhatikan prosedur yang benar serta kondisi
-                            kontraindikasi. Bentuk kuku yang dipilih harus sesuai dengan
-                            kondisi jari dan kuku klien agar hasil tidak hanya indah
-                            tetapi juga nyaman. Berbagai alat, bahan, lenan, dan kosmetik
-                            digunakan secara tepat sesuai fungsi mulai dari gunting kuku,
-                            <em>nail buffer</em>, kikir, garam spa, hingga
-                            <em>cream</em> kutikula dan <em>hand lotion</em>. Terapis juga
-                            wajib memperhatikan kebersihan area kerja, sterilisasi alat,
-                            serta persiapan pribadi agar aman dan higienis. Dengan
-                            demikian, <em>manicure</em> tidak hanya sebatas mempercantik
-                            kuku tetapi juga merupakan perawatan menyeluruh untuk
-                            kesehatan, kenyamanan, dan penampilan.
-                        </p>
-                    </div>
-
-                      <!-- Gambar Rangkuman -->
-                     <div class="flowchart-manicure">
-                        <div class="flowchart-manicure-container"> 
-                            <div class="flowchart-manicure-title">Alur Prosedur Perawatan Tangan</div>
-                            <div class="manicure-flow-row">
-                                <div class="manicure-flow-box">1. Persiapan</div>
-                                <span class="manicure-flow-arrow">→</span>
-                                <div class="manicure-flow-box">2. Pembersihan tangan<br>& kuku</div>
-                                <span class="manicure-flow-arrow">→</span>
-                                <div class="manicure-flow-box">3. Pembersihan<br>Kutikula</div>
-                                <span class="manicure-flow-arrow">→</span>
-                            </div>
-                            <div class="manicure-flow-row">
-                                <div class="manicure-flow-box">4. Pembentukan<br>Kuku</div>
-                                <span class="manicure-flow-arrow">→</span>
-                                <div class="manicure-flow-box">5. Massage</div>
-                                <span class="manicure-flow-arrow">→</span>
-                                <div class="manicure-flow-box">4. Tahap akhir<br>(Pemberian Vitamin Kuku)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        <h1 style="text-align: center; color: #8300b6; margin-bottom: 40px;">Petunjuk Penggunaan Media</h1>
+        
+        <div style="background: linear-gradient(135deg, #f2e7fe 0%, #ffe0f7 100%); border: 2px solid #d3b6ff; border-radius: 16px; padding: 32px; box-shadow: 0 10px 40px -12px rgba(126, 87, 194, 0.35);">
+            
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">1</span>
+                    Buka Media Pembelajaran
+                </h3>
+                <p style="margin-left: 42px;">Akses media pembelajaran melalui tautan: <a href="https://mediamanicure.blogspot.com/p/home_29.html" target="_blank" style="color: #8300b6; font-weight: 600; text-decoration: underline;">https://mediamanicure.blogspot.com/p/home_29.html</a></p>
             </div>
-        </section>
+
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">2</span>
+                    Kontrol Musik
+                </h3>
+                <p style="margin-left: 42px;">Klik icon musik pada bagian bawah kanan blog untuk mengaktifkan atau menonaktifkan musik latar.</p>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">3</span>
+                    Navigasi Blog
+                </h3>
+                <p style="margin-left: 42px;">Pada bagian atas blog terdapat tombol navigasi untuk mengakses berbagai halaman.</p>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">4</span>
+                    Mulai dengan ATP
+                </h3>
+                <p style="margin-left: 42px;">Klik menu <strong>"ATP"</strong> pada navigasi untuk menampilkan Capaian dan Tujuan Pembelajaran.</p>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">5</span>
+                    Pelajari Materi Secara Berurutan
+                </h3>
+                <p style="margin-left: 42px; margin-bottom: 12px;">Klik menu <strong>"Materi"</strong> pada navigasi untuk menampilkan daftar menu pembelajaran. Pelajari materi sesuai urutan berikut:</p>
+                <ul style="margin-left: 62px; line-height: 200%;">
+                    <li><strong>Kajian Teori</strong> - Pahami konsep dasar perawatan tangan</li>
+                    <li><strong>Lembar Analisa</strong> - Pelajari cara menganalisis kondisi tangan</li>
+                    <li><strong>Perlengkapan</strong> - Kenali alat dan bahan yang diperlukan</li>
+                    <li><strong>Prosedur Kerja</strong> - Ikuti langkah-langkah praktik dengan benar</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">6</span>
+                    Perkuat Pemahaman
+                </h3>
+                <p style="margin-left: 42px; margin-bottom: 12px;">Setelah mempelajari semua materi, lanjutkan ke menu berikut untuk memperkuat pemahaman:</p>
+                <ul style="margin-left: 62px; line-height: 200%;">
+                    <li><strong>Rangkuman</strong> - Tinjau poin-poin penting dari pembelajaran</li>
+                    <li><strong>Evaluasi</strong> - Uji pemahaman Anda melalui kuis</li>
+                    <li><strong>Glosarium</strong> - Pelajari istilah-istilah penting</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 0;">
+                <h3 style="color: #8300b6; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: #8300b6; color: white; width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">7</span>
+                    Kembali ke Halaman Utama
+                </h3>
+                <p style="margin-left: 42px;">Gunakan tombol <strong>"Home"</strong> untuk kembali ke halaman utama (Cover) kapan saja.</p>
+            </div>
+
+        </div>
+
+        <div style="background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%); border: 2px solid #ffb74d; border-radius: 12px; padding: 20px; margin-top: 32px; box-shadow: 0 4px 16px rgba(255, 152, 0, 0.15);">
+            <p style="margin: 0; display: flex; align-items: start; gap: 12px;">
+                <span style="font-size: 24px; line-height: 1;">💡</span>
+                <span><strong>Tips:</strong> Untuk pengalaman belajar yang optimal, disarankan untuk mengikuti urutan menu pembelajaran dari awal hingga akhir.</span>
+            </p>
+        </div>
     </div>
+</section>
+
+   </main>
 
     <script>
         (function dropdownToggleInit() {
@@ -650,7 +577,9 @@
             return true;
         })();
     </script>
-   <div class="audio-player-wrapper">
+   
+
+<div class="audio-player-wrapper">
     <button class="music-toggle-btn" id="musicToggle" aria-label="Toggle Music">
         <svg class="music-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
             <path d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm12-2c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/>
@@ -703,7 +632,6 @@
     });
 })();
 </script>
-
 
 </body>
 </html>
